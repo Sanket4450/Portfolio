@@ -6,7 +6,7 @@ export const darkThemeColors = {
 }
 
 export const lightThemeColors = {
-  bgPrimary: '#ffffff',
+  bgPrimary: '#dddddd',
   bgSecondary: '#bcc2bc',
   textPrimary: '#000000',
   textSecondary: '#0a9905',

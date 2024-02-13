@@ -1,12 +1,10 @@
 import { DarkModeProvider } from './context/DarkMode'
-import { DarkModeSwitch } from './components/ui/DarkModeSwitch'
-import { NavButton } from './components/ui/NavButton'
+import { Header } from './components/header'
 
 function App() {
   return (
     <DarkModeProvider>
-      <DarkModeSwitch />
-      <NavButton text="Home" />
+      <Header />
     </DarkModeProvider>
   )
 }
