@@ -9,12 +9,14 @@ export const DarkModeProvider = ({ children }) => {
   useEffect(() => {
     const theme = localStorage.getItem('theme')
     setIsDarkMode(theme === 'dark')
+    document.body.classList.toggle('dark', theme === 'dark')
   }, [])
 
   const toggleDarkMode = () => {
     const newMode = !isDarkMode
     setIsDarkMode(newMode)
     localStorage.setItem('theme', newMode ? 'dark' : 'light')
+    document.body.classList.toggle('dark', newMode)
   }
 
   const theme = isDarkMode ? darkThemeColors : lightThemeColors

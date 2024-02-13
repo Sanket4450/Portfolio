@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { DarkModeSwitch } from './DarkModeSwitch'
 import { NavBar } from './NavBar'
 import { DarkModeContext } from '../../context'
