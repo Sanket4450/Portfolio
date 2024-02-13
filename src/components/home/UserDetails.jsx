@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload } from '@fortawesome/free-solid-svg-icons'
 import { DarkModeContext } from '../../context'
-import { userDetails } from '../../data/user'
+import { userDetails } from '../../data/home'
 
 export const UserDetails = () => {
   const {
@@ -30,7 +30,7 @@ export const UserDetails = () => {
           Github
         </a>
         <a
-          href="../assets/PicsArt_09-14-05.07.59-01.jpeg"
+          href="../../assets/pngs/resume.png"
           style={{ color: grayStrong }}
           className="flex space-x-1"
           download="cv"

@@ -5,6 +5,7 @@ const bio =
 const email = 'talaviyasanket01@gmail.com'
 const github = 'https://github.com/Sanket4450'
 const cv = 'https://docs.google.com/document/d/1lmnm06zDEWFFBMpB8J51iGPwmHA3P7yucT3mSN4UExU/edit?usp=drive_link'
+const experience = 2
 
 export default {
   name,
@@ -13,4 +14,5 @@ export default {
   email,
   github,
   cv,
+  experience,
 }

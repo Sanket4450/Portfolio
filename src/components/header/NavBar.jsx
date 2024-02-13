@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import { navButtons } from '../../data/header'
 import { DarkModeContext } from '../../context'
+import { NavLinkClasses, NavLinkActiveClasses } from '../../common/styles'
 
 export const NavBar = () => {
   const {
@@ -9,13 +10,13 @@ export const NavBar = () => {
   } = useContext(DarkModeContext)
 
   return (
-    <nav className="max-phone:hidden flex text-sm max-md:space-x-4 space-x-10">
+    <nav className="max-sm:hidden flex text-sm max-md:space-x-6 md:space-x-8 2xl:space-x-10">
       {navButtons.map((button) => (
         <NavLink
           key={button.id}
           to={button.path}
           style={{ color: textPrimary, textDecorationColor: textPrimary }}
-          className="text-center text-[13px] font-semibold hover:cursor-pointer hover:underline hover:decoration-2 hover:underline-offset-4"
+          className={({ isActive }) => (isActive ? NavLinkActiveClasses : NavLinkClasses)}
         >
           {button.text}
         </NavLink>
