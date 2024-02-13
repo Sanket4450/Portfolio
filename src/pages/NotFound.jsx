@@ -7,14 +7,14 @@ export const NotFound = () => {
   } = useContext(DarkModeContext)
 
   return (
-    <div className="flex flex-col text-center" style={{ backgroundColor: bgPrimary }}>
-      <h1 className="font-mono text-[14vmax]" style={{ color: textPrimary }}>
+    <div style={{ backgroundColor: bgPrimary }} className="flex flex-col text-center">
+      <h1 style={{ color: textPrimary }} className="font-mono text-[14vmax]">
         404
       </h1>
-      <h3 className="font-sans text-3xl mb-5" style={{ color: textPrimary }}>
+      <h3 style={{ color: textPrimary }} className="font-sans text-3xl mb-5">
         Page Not Found
       </h3>
-      <p className="font-sans text-sm px-6" style={{ color: textPrimary }}>
+      <p style={{ color: textPrimary }} className="font-sans text-sm px-6">
         Oops! The page you are looking for does not exist. It might have been moved or delete.
       </p>
     </div>

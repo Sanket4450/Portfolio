@@ -1,13 +1,17 @@
 export const darkThemeColors = {
-  bgPrimary: '#151a16',
-  bgSecondary: '#1e211f',
-  textPrimary: '#ffffff',
-  textSecondary: '#0a9905',
+  bgPrimary: '#1a1c1a',
+  textPrimary: '#fff',
+  textSecondary: '#e0e0e0',
+  grayPrimary: '#7c827d',
+  grayStrong: '#a6aba6',
+  greenPrimary: '#0ac426',
 }
 
 export const lightThemeColors = {
-  bgPrimary: '#dddddd',
-  bgSecondary: '#bcc2bc',
-  textPrimary: '#000000',
-  textSecondary: '#0a9905',
+  bgPrimary: '#f0f2f0',
+  textPrimary: '#000',
+  textSecondary: '#262626',
+  grayPrimary: '#5e6360',
+  grayStrong: '#30332f',
+  greenPrimary: '#088c1c',
 }

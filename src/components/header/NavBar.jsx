@@ -14,8 +14,8 @@ export const NavBar = () => {
         <NavLink
           key={button.id}
           to={button.path}
-          className="text-center text-xs font-semibold hover:cursor-pointer hover:underline hover:decoration-2 hover:underline-offset-4"
           style={{ color: textPrimary, textDecorationColor: textPrimary }}
+          className="text-center text-[13px] font-semibold hover:cursor-pointer hover:underline hover:decoration-2 hover:underline-offset-4"
         >
           {button.text}
         </NavLink>

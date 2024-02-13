@@ -1,14 +1,11 @@
-import { useContext } from 'react'
-import { DarkModeContext } from '../context'
+// import { useContext } from 'react'
+// import { DarkModeContext } from '../context'
+import { UserDetails } from '../components/home'
 
 export const Home = () => {
-  const {
-    theme: { textPrimary },
-  } = useContext(DarkModeContext)
-
   return (
     <>
-      <h1 style={{ color: textPrimary }}>Home page</h1>
+      <UserDetails />
     </>
   )
 }

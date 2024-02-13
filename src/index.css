@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 body {
-  background-color: #dddddd;
+  background-color: #f0f2f0;
 }
 
 .dark {
-  background-color: #151a16;
+  background-color: #1a1c1a;
 }

@@ -10,8 +10,8 @@ export const Header = () => {
 
   return (
     <header
-      className="flex max-phone:justify-center justify-between items-center py-2 max-sm:px-2 sm:px-[5vw] lg:px-[80px]"
       style={{ backgroundColor: bgPrimary }}
+      className="flex max-phone:justify-center justify-between items-center py-2"
     >
       <DarkModeSwitch />
       <NavBar />
