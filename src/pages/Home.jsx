@@ -6,7 +6,7 @@ import { ContactMe } from '../components/home'
 export const Home = () => {
   return (
     <div>
-      <div className=" bg-primary max-sm:px-5 sm:px-[5vw] lg:px-[80px]">
+      <div className=" bg-primary max-sm:px-5 sm:px-[5vw] lg:px-[80px] py-12 sm:py-24 space-y-20">
         <UserDetails />
         <UserServices />
       </div>
