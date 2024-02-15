@@ -1,10 +1,11 @@
+import { useSelector } from 'react-redux'
 import { ServiceCard } from './ServiceCard'
 import { TitleLink } from '../ui'
 import { userDetails } from '../../data/home'
 import { serviceDetails, serviceCards } from '../../data/services'
 
 export const UserServices = () => {
-  const theme = localStorage.getItem('theme')
+  const theme = useSelector((state) => state.theme.value)
 
   return (
     <section>

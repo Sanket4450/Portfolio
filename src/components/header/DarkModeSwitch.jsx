@@ -1,24 +1,28 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { toggleTheme } from '../../store/slices/theme'
 import { createTheme } from '@mui/material/styles'
 import { MaterialUISwitch } from '../ui/MaterialUISwitch'
 
 export const DarkModeSwitch = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true)
+  const theme = useSelector((state) => state.theme.value)
 
-  const theme = createTheme({ palette: { mode: isDarkMode ? 'dark' : 'light' } })
+  const dispatch = useDispatch()
+
+  const currentTheme = createTheme({ palette: { mode: theme } })
 
   useEffect(() => {
-    const theme = localStorage.getItem('theme')
-    setIsDarkMode(theme === 'dark')
-    document.documentElement.setAttribute('theme', theme)
+    const defaultTheme = localStorage.getItem('theme')
+    dispatch(toggleTheme(defaultTheme))
+    document.documentElement.setAttribute('theme', defaultTheme)
   }, [])
 
   const toggleDarkMode = () => {
-    const newMode = !isDarkMode
-    setIsDarkMode(newMode)
-    localStorage.setItem('theme', newMode ? 'dark' : 'light')
-    document.documentElement.setAttribute('theme', newMode ? 'dark' : 'light')
+    const newTheme = theme === 'dark' ? 'light' : 'dark'
+    dispatch(toggleTheme(newTheme))
+    localStorage.setItem('theme', newTheme)
+    document.documentElement.setAttribute('theme', newTheme)
   }
 
-  return <MaterialUISwitch theme={theme} checked={isDarkMode} onChange={toggleDarkMode} />
+  return <MaterialUISwitch theme={currentTheme} checked={theme === 'dark'} onChange={toggleDarkMode} />
 }
