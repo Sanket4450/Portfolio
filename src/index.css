@@ -31,7 +31,7 @@
   --text-theme-primary: #019217;
   --text-theme-hover-primary: #036612;
   --gray-primary: #5e6360;
-  --gray-weak: #cfcfcf;
+  --gray-weak: #dedede;
   --gray-strong: #30332f;
   background-color: var(--bg-primary);
 }

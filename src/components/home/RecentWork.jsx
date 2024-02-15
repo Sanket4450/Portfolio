@@ -5,7 +5,7 @@ import { projectCards } from '../../data/projects'
 
 export const RecentWork = () => {
   return (
-    <section className=" py-24 space-y-10">
+    <section className=" py-20 space-y-10">
       <div>
         <TitleLink title="Recent Works" path="/projects" />
         <div className=" flex justify-between items-start py-4">
