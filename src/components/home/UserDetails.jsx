@@ -4,7 +4,7 @@ import { userDetails } from '../../data/home'
 
 export const UserDetails = () => {
   return (
-    <section className=" py-10 flex flex-col justify-between space-y-6">
+    <section className=" pt-20 space-y-6">
       <h2 className=" text-theme-primary max-phone:text-xl max-sm:text-2xl text-3xl font-semibold">
         Hello, I'm {userDetails.name}
       </h2>

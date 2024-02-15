@@ -9,7 +9,7 @@ export const Home = () => {
         <UserDetails />
         <UserServices />
       </div>
-      <div className=" bg-gray-weak max-sm:px-5 sm:px-[5vw] lg:px-[80px] max-lg:py-[50px] lg:py-[80px]">
+      <div className=" bg-gray-weak max-sm:px-5 sm:px-[5vw] lg:px-[80px]">
         <RecentWork />
       </div>
     </div>

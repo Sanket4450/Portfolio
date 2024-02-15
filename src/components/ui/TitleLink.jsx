@@ -6,7 +6,7 @@ export const TitleLink = ({ title, path }) => {
   return (
     <div className=" text-theme-primary font-semibold max-md:text-md md:text-xl flex space-x-1">
       <p>———</p>
-      <p className=" hover:cursor-pointer" onClick={() => navigate(path)}>
+      <p className=" hover:cursor-pointer hover:text-theme-hover-primary" onClick={() => navigate(path)}>
         {title}
       </p>
     </div>

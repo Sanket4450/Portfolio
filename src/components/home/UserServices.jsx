@@ -8,8 +8,8 @@ export const UserServices = () => {
   const theme = useSelector((state) => state.theme.value)
 
   return (
-    <section>
-      <div className=" flex justify-between py-14">
+    <section className=" py-24 space-y-16">
+      <div className=" flex justify-between">
         <h2 className=" text-primary sm:max-w-[40%] font-bold max-phone:text-xl max-md:text-2xl md:text-3xl">
           {userDetails.experience}+ Years Experience Working
         </h2>
