@@ -1,10 +1,10 @@
 import { useContext } from 'react'
-import { DarkModeContext } from '../../context'
+import { ThemeContext } from '../../context'
 
 export const ServiceCard = ({ img, title, description }) => {
   const {
-    theme: { textPrimary, grayPrimary, grayWeak, grayStrong, greenPrimary },
-  } = useContext(DarkModeContext)
+    theme: { textPrimary, grayWeak, grayStrong, greenPrimary },
+  } = useContext(ThemeContext)
 
   return (
     <div

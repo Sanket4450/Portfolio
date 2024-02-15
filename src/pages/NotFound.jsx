@@ -1,10 +1,10 @@
 import { useContext } from 'react'
-import { DarkModeContext } from '../context'
+import { ThemeContext } from '../context'
 
 export const NotFound = () => {
   const {
     theme: { bgPrimary, textPrimary },
-  } = useContext(DarkModeContext)
+  } = useContext(ThemeContext)
 
   return (
     <div style={{ backgroundColor: bgPrimary }} className="flex flex-col text-center">

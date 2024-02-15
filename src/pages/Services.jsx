@@ -1,10 +1,10 @@
 import { useContext } from 'react'
-import { DarkModeContext } from '../context'
+import { ThemeContext } from '../context'
 
 export const Services = () => {
   const {
     theme: { textPrimary },
-  } = useContext(DarkModeContext)
+  } = useContext(ThemeContext)
 
   return <div style={{ color: textPrimary }}>Services page</div>
 }

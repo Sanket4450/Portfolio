@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { DarkModeProvider } from './context/DarkMode'
+import { ThemeProvider } from './context'
 import { Header } from './components/header'
 import { Home } from './pages'
 import { Skills } from './pages/Skills'
@@ -11,7 +11,7 @@ import { NotFound } from './pages/NotFound'
 
 function App() {
   return (
-    <DarkModeProvider>
+    <ThemeProvider>
       <Router>
         <Header />
         <Routes>
@@ -24,7 +24,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
-    </DarkModeProvider>
+    </ThemeProvider>
   )
 }
 

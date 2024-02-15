@@ -1,9 +1,9 @@
 import { createContext, useState, useEffect } from 'react'
 import { darkThemeColors, lightThemeColors } from '../common/theme'
 
-export const DarkModeContext = createContext()
+export const ThemeContext = createContext()
 
-export const DarkModeProvider = ({ children }) => {
+export const ThemeProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(true)
 
   useEffect(() => {
@@ -21,7 +21,5 @@ export const DarkModeProvider = ({ children }) => {
 
   const theme = isDarkMode ? darkThemeColors : lightThemeColors
 
-  return (
-    <DarkModeContext.Provider value={{ isDarkMode, theme, toggleDarkMode }}>{children}</DarkModeContext.Provider>
-  )
+  return <ThemeContext.Provider value={{ isDarkMode, theme, toggleDarkMode }}>{children}</ThemeContext.Provider>
 }

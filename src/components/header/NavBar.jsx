@@ -1,13 +1,13 @@
 import { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import { navButtons } from '../../data/header'
-import { DarkModeContext } from '../../context'
+import { ThemeContext } from '../../context'
 import { NavLinkClasses, NavLinkActiveClasses } from '../../common/styles'
 
 export const NavBar = () => {
   const {
     theme: { textPrimary },
-  } = useContext(DarkModeContext)
+  } = useContext(ThemeContext)
 
   return (
     <nav className="max-sm:hidden flex text-sm max-md:space-x-6 md:space-x-8 2xl:space-x-10">

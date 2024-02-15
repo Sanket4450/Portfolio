@@ -1,1 +1,1 @@
-export { DarkModeProvider, DarkModeContext } from './DarkMode'
+export { ThemeProvider, ThemeContext } from './Theme'

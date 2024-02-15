@@ -1,16 +1,16 @@
 import { useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload } from '@fortawesome/free-solid-svg-icons'
-import { DarkModeContext } from '../../context'
+import { ThemeContext } from '../../context'
 import { userDetails } from '../../data/home'
 
 export const UserDetails = () => {
   const {
     theme: { bgPrimary, textPrimary, grayPrimary, grayStrong, greenPrimary },
-  } = useContext(DarkModeContext)
+  } = useContext(ThemeContext)
 
   return (
-    <section style={{ backgroundColor: bgPrimary }} className="py-10 flex flex-col justify-between space-y-6">
+    <section className="py-10 flex flex-col justify-between space-y-6">
       <h2 style={{ color: greenPrimary }} className="max-phone:text-xl max-sm:text-2xl text-3xl font-semibold">
         Hello, I'm {userDetails.name}
       </h2>

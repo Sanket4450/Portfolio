@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #f0f2f0;
+.dark {
+  background-color: #121212;
 }
 
-.dark {
-  background-color: #161716;
+body {
+  background-color: #f0f2f0;
 }
