@@ -4,14 +4,26 @@ export default {
   theme: {
     extend: {
       screens: {
-        'phone': '440px',
-        'sm': '640px',
-        'md': '834px',
-        'lg': '1024px',
-        'xl': '1280px',
-        '2xl': '1536px',
-      }
-    }
+        phone: '440px',
+      },
+      backgroundColor: {
+        primary: 'var(--bg-primary)',
+      },
+      textColor: {
+        primary: 'var(--text-primary)',
+        'theme-primary': 'var(--text-theme-primary)',
+        'theme-hover-primary': 'var(--text-theme-hover-primary)',
+      },
+      colors: {
+        'bg-primary': 'var(--bg-primary)',
+        'text-primary': 'var(--text-primary)',
+        'text-theme-primary': 'var(--text-theme-primary)',
+        'text-theme-hover-primary': 'var(--text-theme-hover-primary)',
+        'gray-primary': 'var(--gray-primary)',
+        'gray-weak': 'var(--gray-weak)',
+        'gray-strong': 'var(--gray-strong)',
+      },
+    },
   },
   plugins: [],
 }

@@ -1,7 +1,6 @@
 export const darkThemeColors = {
   bgPrimary: '#121212',
   textPrimary: '#fff',
-  textSecondary: '#e0e0e0',
   grayPrimary: '#7c827d',
   grayWeak: '#30332f',
   grayStrong: '#a6aba6',
@@ -12,7 +11,6 @@ export const darkThemeColors = {
 export const lightThemeColors = {
   bgPrimary: '#f0f2f0',
   textPrimary: '#000',
-  textSecondary: '#262626',
   grayPrimary: '#5e6360',
   grayWeak: '#cfcfcf',
   grayStrong: '#30332f',
