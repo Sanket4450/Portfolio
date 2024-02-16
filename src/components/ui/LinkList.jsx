@@ -1,5 +1,4 @@
 export const LinkList = ({ title, items }) => {
-  console.log(items)
   return (
     <div className=" space-y-3">
       <h4 className=" text-primary font-semibold">{title}</h4>
