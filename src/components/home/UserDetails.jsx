@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload } from '@fortawesome/free-solid-svg-icons'
-import { userDetails } from '../../data/home'
+import { userDetails } from '../../data/user'
 
 export const UserDetails = () => {
   return (

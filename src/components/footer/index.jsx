@@ -1,6 +1,6 @@
 import { InfoList } from '../ui'
 import { LinkList } from '../ui'
-import { userDetails } from '../../data/home'
+import { userDetails } from '../../data/user'
 import { informationList, mediaList } from '../../data/footer'
 
 export const Footer = () => {

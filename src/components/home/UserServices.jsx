@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import { ServiceCard } from './ServiceCard'
 import { TitleLink } from '../ui'
-import { userDetails } from '../../data/home'
+import { userDetails } from '../../data/user'
 import { serviceDetails, serviceCards } from '../../data/services'
 
 export const UserServices = () => {

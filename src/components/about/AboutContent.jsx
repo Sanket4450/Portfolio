@@ -1,4 +1,4 @@
-import { userDetails } from '../../data/home'
+import { userDetails } from '../../data/user'
 import { aboutDetails } from '../../data/about'
 
 export const AboutContent = () => {
@@ -9,11 +9,11 @@ export const AboutContent = () => {
           Hi &#128075;, I'm {userDetails.name}
         </h1>
         <p className=" text-primary text-sm font-semibold">{userDetails.about}</p>
-        <div className=" space-y-1.5">
+        <div className=" space-y-2">
           <h2 className=" text-primary text-2xl sm:text-xl lg:text-3xl font-semibold">Expertise:</h2>
           <p className=" text-primary text-sm font-semibold">{userDetails.expertise}</p>
         </div>
-        <div className=" space-y-1.5">
+        <div className=" space-y-2">
           <h2 className=" text-primary text-2xl sm:text-xl lg:text-3xl font-semibold">Vision:</h2>
           <p className=" text-primary text-sm font-semibold">{userDetails.vision}</p>
         </div>
