@@ -1,0 +1,1 @@
+export { messageSchema } from './message'
