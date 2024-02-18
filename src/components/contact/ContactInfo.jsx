@@ -13,7 +13,7 @@ export const ContactInfo = () => {
       <ContactCard
         IconComp={PhoneComp}
         contactValue="+91 XXXXX XXXXX"
-        hrefValue={`tel:${userDetails.phone}`}
+        hrefValue={`tel:${userDetails.mobile}`}
         description="Contact Phone"
       />
       <ContactCard
