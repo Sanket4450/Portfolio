@@ -26,7 +26,7 @@
 }
 
 :root[theme='light'] {
-  --bg-primary: #f0f2f0;
+  --bg-primary: #ebeeeb;
   --text-primary: #000;
   --text-theme-primary: #019217;
   --text-theme-hover-primary: #036612;

@@ -14,7 +14,7 @@ export const RecentWork = () => {
           </h2>
           <NavLink
             to="/projects"
-            className=" max-sm:hidden text-primary font-semibold text-sm px-4 py-2 border-2 border-text-theme-primary rounded-sm hover:text-bg-primary hover:bg-text-theme-primary"
+            className=" max-sm:hidden text-primary font-semibold text-sm px-4 py-2 border-2 border-text-theme-primary rounded-sm hover:text-bg-primary hover:bg-text-theme-primary transition duration-200"
           >
             View All Projects
           </NavLink>

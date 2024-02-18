@@ -5,7 +5,7 @@ export const ContactCard = ({ IconComp, contactValue, hrefValue, description }) 
       <div className=" text-center space-y-3">
         <a
           href={hrefValue}
-          className=" text-primary hover:text-theme-primary font-semibold text-2xl lg:text-xl xl:text-2xl"
+          className=" text-primary hover:text-theme-primary font-semibold text-2xl lg:text-xl xl:text-2xl transition duration-300 "
         >
           {contactValue}
         </a>

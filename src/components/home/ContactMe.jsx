@@ -9,7 +9,7 @@ export const ContactMe = () => {
       </div>
       <a
         href="tel:9723530820"
-        className=" bg-text-theme-primary text-bg-primary font-semibold text-[15px] max-sm:mx-auto w-32 h-10 flex justify-center items-center rounded-sm hover:bg-primary hover:text-primary hover:border-2 hover:border-text-theme-primary"
+        className=" bg-text-theme-primary text-bg-primary font-semibold text-[15px] max-sm:mx-auto w-32 h-10 flex justify-center items-center rounded-sm hover:bg-primary hover:text-primary hover:border-2 hover:border-text-theme-primary transition duration-100"
       >
         Contact Me
       </a>

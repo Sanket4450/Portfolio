@@ -10,7 +10,7 @@ export const WorkCard = ({ image, title, path, extraClasses }) => {
       <img src={image} className=" w-full h-[75%] sm:h-[80%]" />
       <div className=" h-[25%] sm:h-[20%] flex flex-col justify-center space-y-1">
         <h3 className=" text-primary font-semibold max-phone:text-sm text-lg">{title}</h3>
-        <Link to={path} className=" text-theme-primary hover:text-theme-hover-primary text-sm">
+        <Link to={path} className=" text-theme-primary hover:text-theme-hover-primary text-sm transition duration-300">
           See project <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
         </Link>
       </div>
