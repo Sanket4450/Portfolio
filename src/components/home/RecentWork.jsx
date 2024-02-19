@@ -28,7 +28,7 @@ export const RecentWork = () => {
             title={projectCard.title}
             titleDesc={projectCard.titleDescription}
             image={projectCard.image}
-            extraClasses={projectCard.extraClasses}
+            align={projectCard.align}
           />
         ))}
       </div>

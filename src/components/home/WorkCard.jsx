@@ -2,10 +2,12 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 
-export const WorkCard = ({ image, title, titleDesc, path, extraClasses }) => {
+export const WorkCard = ({ image, title, titleDesc, path, align }) => {
   return (
     <div
-      className={` w-[92%] phone:w-[75%] sm:w-[450px] lg:w-[32.5%] h-56 phone:h-72 sm:h-[370px] lg:h-80 xl:h-[370px] ${extraClasses}`}
+      className={` w-[92%] phone:w-[75%] sm:w-[450px] lg:w-[32.5%] h-56 phone:h-72 sm:h-[370px] lg:h-80 xl:h-[370px] ${
+        align === 'right' ? 'justify-self-end' : 'justify-self-start'
+      }`}
     >
       <img src={image} className=" w-full h-[75%] sm:h-[80%]" />
       <div className=" h-[25%] sm:h-[20%] flex flex-col justify-center space-y-1">

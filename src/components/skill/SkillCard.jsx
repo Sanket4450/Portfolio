@@ -1,6 +1,6 @@
 export const SkillCard = ({ image, title, link }) => {
   return (
-    <div className=" w-48 h-56 m-6">
+    <div className=" w-40 h-48 m-6">
       <div className=" h-[75%] bg-greenGray flex justify-center items-center rounded-t-sm">
         <img src={image} className=" size-20" />
       </div>
