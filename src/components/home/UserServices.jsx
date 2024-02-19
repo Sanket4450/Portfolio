@@ -14,7 +14,7 @@ export const UserServices = () => {
           {userDetails.experience}+ Years Experience Working
         </h2>
         <div className=" max-sm:hidden sm:max-w-[40%] flex flex-col space-y-1.5">
-          <TitleLink title="Services" path="/services" />
+          <TitleLink title="Services" />
           <p className=" text-theme-primary text-sm">{serviceDetails.discoverServices}</p>
         </div>
       </div>

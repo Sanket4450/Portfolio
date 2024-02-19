@@ -4,7 +4,6 @@ import { Footer } from './components/footer'
 import { Home } from './pages'
 import { Skills } from './pages/Skills'
 import { Projects } from './pages/Projects'
-import { Services } from './pages/Services'
 import { About } from './pages/About'
 import { Contact } from './pages/Contact'
 import { NotFound } from './pages/NotFound'
@@ -19,7 +18,6 @@ function App() {
         <Route path="/projects" element={<Projects />}>
           <Route path=":project" element={<Projects />} />
         </Route>
-        <Route path="/services" element={<Services />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />

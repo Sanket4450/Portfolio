@@ -16,16 +16,11 @@ export const navButtons = [
   },
   {
     id: 4,
-    path: '/services',
-    text: 'Services',
-  },
-  {
-    id: 5,
     path: '/about',
     text: 'About',
   },
   {
-    id: 6,
+    id: 5,
     path: '/contact',
     text: 'Contact',
   },

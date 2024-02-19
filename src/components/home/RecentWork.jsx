@@ -7,7 +7,7 @@ export const RecentWork = () => {
   return (
     <section className=" py-20 space-y-10">
       <div>
-        <TitleLink title="Recent Works" path="/projects" />
+        <TitleLink title="Recent Works" />
         <div className=" flex justify-between items-start py-4">
           <h2 className=" text-primary font-bold text-2xl sm:text-3xl md:text-4xl sm:max-w-[45%]">
             Some of my favourite projects.
