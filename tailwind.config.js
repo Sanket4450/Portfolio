@@ -5,6 +5,7 @@ export default {
     extend: {
       screens: {
         phone: '440px',
+        tab: '799px',
       },
       backgroundColor: {
         primary: 'var(--bg-primary)',
@@ -22,6 +23,7 @@ export default {
         'gray-primary': 'var(--gray-primary)',
         'gray-weak': 'var(--gray-weak)',
         'gray-strong': 'var(--gray-strong)',
+        greenGray: '#d9ded9',
       },
     },
   },

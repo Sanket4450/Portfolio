@@ -3,10 +3,10 @@ import { languages, frontendSkills, backendSkills, tools } from '../../data/skil
 
 export const AllSkills = () => {
   return (
-    <section className=" space-y-20">
+    <section className=" space-y-10 py-12">
       <SkillSection title="Programming Languages" skills={languages} />
-      <SkillSection title="Front-end Skills" skills={frontendSkills} />
-      <SkillSection title="Back-end Skills" skills={backendSkills} />
+      <SkillSection title="Front-end" skills={frontendSkills} />
+      <SkillSection title="Back-end" skills={backendSkills} />
       <SkillSection title="Other Tools" skills={tools} />
     </section>
   )
