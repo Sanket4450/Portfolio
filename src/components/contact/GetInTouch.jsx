@@ -56,9 +56,9 @@ export const GetInTouch = () => {
     },
   })
   return (
-    <section className=" py-16">
+    <section className=" py-12">
       <div className=" space-y-4">
-        <h2 className=" text-primary font-semibold text-3xl text-center">Get In Touch.</h2>
+        <h2 className=" text-primary font-semibold text-4xl text-center">Get In Touch.</h2>
         <p className=" text-gray-primary text-center">
           Connect with me for your requirements or queries. I'll get back to you
         </p>

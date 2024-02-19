@@ -1,4 +1,4 @@
-import { AllSkills } from '../components/skills'
+import { AllSkills } from '../components/skill'
 
 export const Skills = () => {
   return (

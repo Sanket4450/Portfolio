@@ -9,7 +9,7 @@ const LocationComp = () => <FontAwesomeIcon icon={faLocationDot} className=" tex
 
 export const ContactInfo = () => {
   return (
-    <section className=" md:flex md:justify-between flex-wrap max-md:space-y-10">
+    <section className=" md:flex md:justify-between flex-wrap max-md:space-y-10 py-10">
       <ContactCard
         IconComp={PhoneComp}
         contactValue="+91 XXXXX XXXXX"

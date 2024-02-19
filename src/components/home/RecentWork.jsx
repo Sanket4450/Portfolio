@@ -26,6 +26,7 @@ export const RecentWork = () => {
             key={projectCard.id}
             path={projectCard.path}
             title={projectCard.title}
+            titleDesc={projectCard.titleDescription}
             image={projectCard.image}
             extraClasses={projectCard.extraClasses}
           />
