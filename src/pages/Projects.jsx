@@ -4,6 +4,10 @@ import { AllProjects } from '../components/project'
 import { projectCards } from '../data/projects'
 
 export const Projects = () => {
+  useEffect(() => {
+    document.title = 'Portfolio | My Work'
+  }, [])
+
   const { project } = useParams()
   const navigate = useNavigate()
   const projectRef = useRef()

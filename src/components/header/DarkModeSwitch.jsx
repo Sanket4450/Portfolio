@@ -13,8 +13,8 @@ export const DarkModeSwitch = () => {
 
   useEffect(() => {
     const defaultTheme = localStorage.getItem('theme')
-    dispatch(toggleTheme(defaultTheme))
-    document.documentElement.setAttribute('theme', defaultTheme)
+    dispatch(toggleTheme(defaultTheme || 'dark'))
+    document.documentElement.setAttribute('theme', defaultTheme || 'dark')
   }, [])
 
   const toggleDarkMode = () => {
