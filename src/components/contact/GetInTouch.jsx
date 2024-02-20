@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useFormik } from 'formik'
+import { useNavigate } from 'react-router-dom'
 import { CircularProgress } from '@mui/material'
 import { FormTextField } from './FormTextField'
 import { messageSchema } from '../../schemas'
@@ -19,6 +20,7 @@ export const GetInTouch = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
+  const navigate = useNavigate()
 
   useEffect(() => {
     window.addEventListener('resize', () => setScreenWidth(window.innerWidth))
@@ -48,6 +50,7 @@ export const GetInTouch = () => {
             setErrorMessage(data.message)
           } else {
             action.resetForm()
+            navigate('/submit')
           }
         })
         .catch((error) => {

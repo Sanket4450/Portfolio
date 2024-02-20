@@ -1,12 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Header } from './components/header'
 import { Footer } from './components/footer'
-import { Home } from './pages'
-import { Skills } from './pages/Skills'
-import { Projects } from './pages/Projects'
-import { About } from './pages/About'
-import { Contact } from './pages/Contact'
-import { NotFound } from './pages/NotFound'
+import { Home, Skills, Projects, About, Contact, Submit, NotFound } from './pages'
 
 function App() {
   return (
@@ -20,6 +15,7 @@ function App() {
         </Route>
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/submit" element={<Submit />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
