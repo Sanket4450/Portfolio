@@ -1,6 +1,6 @@
 import eviraPreview from '../../assets/images/evira-preview.jpg'
-import applePreview from '../../assets/images/apple-home.jpg'
-import sonicboxPreview from '../../assets/images/sonicbox-preview.jpg'
+import applePreview from '../../assets/images/apple-home.png'
+import sonicboxPreview from '../../assets/images/sonicbox-preview.png'
 
 import HTML from '../../assets/pngs/html-icon.png'
 import CSS from '../../assets/pngs/css-icon.png'
