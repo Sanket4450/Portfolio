@@ -2,7 +2,7 @@ import { forwardRef } from 'react'
 import { ProjectCard } from './ProjectCard'
 import { projectCards } from '../../data/projects'
 
-export const AllProjects = forwardRef(({projectName}, ref) => {
+export const AllProjects = forwardRef(({ projectName }, ref) => {
   return (
     <div className=" space-y-20 py-20">
       {projectCards.map((card) => (
