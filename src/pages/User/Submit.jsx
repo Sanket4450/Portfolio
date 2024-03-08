@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { MessageSubmit } from '../components/submit'
+import { MessageSubmit } from '../../components/submit'
 
 export const Submit = () => {
   useEffect(() => {

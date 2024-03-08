@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { AllProjects } from '../components/project'
-import { projectCards } from '../data/projects'
+import { AllProjects } from '../../components/project'
+import { projectCards } from '../../data/projects'
 
 export const Projects = () => {
   useEffect(() => {

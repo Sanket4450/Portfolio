@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { AllSkills } from '../components/skill'
+import { AllSkills } from '../../components/skill'
 
 export const Skills = () => {
   useEffect(() => {

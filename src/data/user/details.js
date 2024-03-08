@@ -1,4 +1,5 @@
 import sanketProfile from '../../assets/images/Sanket-profile.png'
+import sklogo from '/portfolio-fevicon.png'
 
 const name = 'Sanket Talaviya'
 const title = 'MERN Stack Developer'
@@ -21,6 +22,8 @@ const expertise =
 const vision =
   "My vision is to continually push the boundaries of web development, staying at the forefront of emerging technologies and best practices. I am committed to delivering high-quality, maintainable code that not only meets but exceeds expectations. Let's connect and embark on a journey of innovation and growth together in the dynamic world of MERN stack development."
 
+const logo = sklogo
+
 export default {
   name,
   title,
@@ -35,4 +38,5 @@ export default {
   about,
   expertise,
   vision,
+  logo,
 }

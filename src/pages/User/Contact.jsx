@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { ContactInfo, GetInTouch } from '../components/contact'
+import { ContactInfo, GetInTouch } from '../../components/contact'
 
 export const Contact = () => {
   useEffect(() => {

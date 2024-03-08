@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { AboutContent } from '../components/about'
+import { AboutContent } from '../../components/about'
 
 export const About = () => {
   useEffect(() => {
