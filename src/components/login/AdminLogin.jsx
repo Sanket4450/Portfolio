@@ -19,29 +19,45 @@ const OTPFieldStyles = {
   },
 }
 
-const OTPField = withStyles(OTPFieldStyles)(({ classes, width, otp, setOTP }) => {
+const OTPField = withStyles(OTPFieldStyles)(({ classes, otp, setOTP }) => {
   const inputsRef = useRef([])
 
   const handleOTPChange = (index, value, event) => {
-    const newOTP = [...otp]
-    newOTP[index] = value
-    setOTP(newOTP)
+    if (value === '' || value.match(/^(0|[1-9]\d*)$/)) {
+      const newOTP = [...otp]
+      newOTP[index] = value
+      setOTP(newOTP)
 
-    if (event.key === 'Backspace' && value === '') {
-      if (index > 0) {
-        inputsRef.current[index - 1].focus()
-        newOTP[index - 1] = ''
-        setOTP(newOTP)
+      if (event.key === 'Backspace' && value === '') {
+        if (index > 0) {
+          inputsRef.current[index - 1].focus()
+          newOTP[index - 1] = ''
+          setOTP(newOTP)
+        }
+      } else if (value && index < 5) {
+        inputsRef.current[index + 1].focus()
       }
-    } else if (value && index < 5) {
-      inputsRef.current[index + 1].focus()
     }
   }
 
   return (
     <TextField
       variant="outlined"
-      style={{ width: '330px', overflow: 'hidden' }}
+      disabled={true}
+      style={{ width: '330px' }}
+      sx={{
+        '& .MuiOutlinedInput-root': {
+          '& fieldset': {
+            borderColor: 'var(--bg-primary)',
+          },
+          '&:hover fieldset': {
+            borderColor: 'var(--bg-primary)',
+          },
+          '&.Mui-focused fieldset': {
+            borderColor: 'var(--bg-primary)',
+          },
+        },
+      }}
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
@@ -49,6 +65,7 @@ const OTPField = withStyles(OTPFieldStyles)(({ classes, width, otp, setOTP }) =>
               {Array.from({ length: 6 }).map((_, index) => (
                 <input
                   key={index}
+                  id={index}
                   type="text"
                   maxLength="1"
                   className={classes.input}
@@ -69,7 +86,6 @@ const OTPField = withStyles(OTPFieldStyles)(({ classes, width, otp, setOTP }) =>
 export const AdminLogin = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   const [otp, setOTP] = useState(['', '', '', '', '', ''])
-  const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
   const navigate = useNavigate()
@@ -137,7 +153,7 @@ export const AdminLogin = () => {
             style={{ width: screenWidth < 640 ? '95%' : '550px' }}
             className=" mx-auto flex justify-between items-center"
           >
-            <OTPField width={screenWidth < 640 ? '95%' : '550px'} otp={otp} setOTP={setOTP} />
+            <OTPField otp={otp} setOTP={setOTP} />
             <button className=" w-48 h-11 bg-text-theme-primary text-bg-primary border-2 border-text-theme-primary text-xl rounded-md">
               Generate
             </button>
