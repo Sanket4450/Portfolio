@@ -1,25 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Box, TextField, InputAdornment } from '@mui/material'
-import { withStyles } from '@mui/styles'
 import { userDetails } from '../../data/user'
 
-const OTPFieldStyles = {
-  input: {
-    width: '40px',
-    height: '40px',
-    fontSize: '20px',
-    textAlign: 'center',
-    borderStyle: 'solid',
-    borderWidth: '1px',
-    borderColor: 'black',
-    borderRadius: '5px',
-    margin: '0 5px',
-    outline: 'none',
-  },
-}
-
-const OTPField = withStyles(OTPFieldStyles)(({ classes, otp, setOTP }) => {
+const OTPField = ({ width, otp, setOTP }) => {
   const inputsRef = useRef([])
 
   const handleOTPChange = (index, value, event) => {
@@ -44,7 +28,7 @@ const OTPField = withStyles(OTPFieldStyles)(({ classes, otp, setOTP }) => {
     <TextField
       variant="outlined"
       disabled={true}
-      style={{ width: '330px' }}
+      style={{ width }}
       sx={{
         '& .MuiOutlinedInput-root': {
           '& fieldset': {
@@ -61,14 +45,14 @@ const OTPField = withStyles(OTPFieldStyles)(({ classes, otp, setOTP }) => {
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
-            <Box display="flex">
+            <Box padding="0px">
               {Array.from({ length: 6 }).map((_, index) => (
                 <input
                   key={index}
                   id={index}
                   type="text"
                   maxLength="1"
-                  className={classes.input}
+                  className=" w-[10.9vw] phone:w-[7.8vw] sm:w-10 h-8 sm:h-10 text-lg text-center border-[1px] border-black rounded-md mx-[1vw] sm:mx-2 outline-none"
                   ref={(el) => (inputsRef.current[index] = el)}
                   value={otp[index]}
                   onChange={(e) => handleOTPChange(index, e.target.value, e)}
@@ -81,7 +65,7 @@ const OTPField = withStyles(OTPFieldStyles)(({ classes, otp, setOTP }) => {
       }}
     />
   )
-})
+}
 
 export const AdminLogin = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
@@ -151,10 +135,14 @@ export const AdminLogin = () => {
           </Box>
           <div
             style={{ width: screenWidth < 640 ? '95%' : '550px' }}
-            className=" mx-auto flex justify-between items-center"
+            className=" mx-auto flex flex-col phone:flex-row justify-between items-center max-phone:space-y-3"
           >
-            <OTPField otp={otp} setOTP={setOTP} />
-            <button className=" w-48 h-11 bg-text-theme-primary text-bg-primary border-2 border-text-theme-primary text-xl rounded-md">
+            <OTPField
+              width={screenWidth < 440 ? '100%' : screenWidth < 640 ? '75%' : '364px'}
+              otp={otp}
+              setOTP={setOTP}
+            />
+            <button className=" w-28 phone:w-[22.5%] sm:w-40 h-[53px] sm:h-11 bg-text-theme-primary text-bg-primary border-2 border-text-theme-primary text-lg sm:text-xl rounded-md">
               Generate
             </button>
           </div>
