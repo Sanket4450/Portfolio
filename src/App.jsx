@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Header } from './components/header'
 import { Footer } from './components/footer'
 import { Home, Skills, Projects, About, Contact, Submit, NotFound } from './pages/User'
-import { Login } from './pages/Admin'
+import { Login, Dashboard } from './pages/Admin'
 
 function App() {
   return (
@@ -18,6 +18,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/submit" element={<Submit />} />
         <Route path="/admin/login" element={<Login />} />
+        <Route path="/admin" element={<Dashboard />}>
+          
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

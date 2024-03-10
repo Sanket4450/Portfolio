@@ -1,0 +1,1 @@
+export { messageIcons } from './messageIcons'
