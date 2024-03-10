@@ -29,6 +29,7 @@ const OTPField = ({ width, otp, setOTP }) => {
       variant="outlined"
       disabled={true}
       style={{ width }}
+      autoComplete="off"
       sx={{
         '& .MuiOutlinedInput-root': {
           '& fieldset': {
@@ -45,7 +46,7 @@ const OTPField = ({ width, otp, setOTP }) => {
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
-            <Box padding="0px">
+            <Box padding="0px" overflow="hidden">
               {Array.from({ length: 6 }).map((_, index) => (
                 <input
                   key={index}
@@ -55,6 +56,7 @@ const OTPField = ({ width, otp, setOTP }) => {
                   className=" w-[10.9vw] phone:w-[7.8vw] sm:w-10 h-8 sm:h-10 text-lg text-center border-[1px] border-black rounded-md mx-[1vw] sm:mx-2 outline-none"
                   ref={(el) => (inputsRef.current[index] = el)}
                   value={otp[index]}
+                  autoComplete="off"
                   onChange={(e) => handleOTPChange(index, e.target.value, e)}
                   onKeyDown={(e) => handleOTPChange(index, otp[index], e)}
                 />
@@ -101,11 +103,13 @@ export const AdminLogin = () => {
             }}
             noValidate
             autoComplete="off"
+            overflow="hidden"
           >
             <TextField
               label="Admin Secret"
               variant="outlined"
               spellCheck={false}
+              autoComplete="off"
               sx={{
                 '& .MuiOutlinedInput-root': {
                   '& fieldset': {

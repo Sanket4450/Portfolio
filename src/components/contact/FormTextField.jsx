@@ -8,6 +8,7 @@ export const FormTextField = ({ width, label, name, value, onChange, onBlur, hel
       }}
       noValidate
       autoComplete="off"
+      overflow="hidden"
     >
       <TextField
         multiline={multiline}

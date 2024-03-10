@@ -1,10 +1,13 @@
+import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { AdminDataCard } from './AdminDataCard'
 import { userDetails } from '../../data/user'
 import { messageIcons } from '../../data/messages'
 
 export const AdminHome = () => {
+  const navigate = useNavigate()
   const theme = useSelector((state) => state.theme.value)
+
   return (
     <section>
       <h1 className="text-3xl text-center font-bold text-primary py-5">Admin Dashboard</h1>
@@ -59,7 +62,7 @@ export const AdminHome = () => {
           </div>
         </div>
         <div className=" flex max-sm:flex-col justify-evenly items-center max-sm:space-y-5 my-20">
-          <h2 className=" w-[70vw] sm:w-44 lg:w-64 text-center py-3 text-xl font-semibold hover:cursor-pointer text-bg-primary bg-text-theme-primary border-4 border-text-theme-primary rounded-md hover:text-primary hover:bg-primary transition duration-200">
+          <h2 className=" w-[70vw] sm:w-44 lg:w-64 text-center py-3 text-xl font-semibold hover:cursor-pointer text-bg-primary bg-text-theme-primary border-4 border-text-theme-primary rounded-md hover:text-primary hover:bg-primary transition duration-200" onClick={() => navigate('/admin/messages')}>
             View Messages
           </h2>
           <h2 className=" w-[70vw] sm:w-44 lg:w-64 text-center py-3 text-xl font-semibold hover:cursor-pointer text-bg-primary bg-text-theme-primary border-4 border-text-theme-primary rounded-md hover:text-primary hover:bg-primary transition duration-200">
