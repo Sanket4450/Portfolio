@@ -1,2 +1,2 @@
-export { AdminLogin } from './AdminLogin'
+export { AdminVerifySecret } from './AdminVerifySecret'
 export { AdminVerifyOtp } from './AdminVerifyOtp'

@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Header } from './components/header'
 import { Footer } from './components/footer'
 import { Home, Skills, Projects, About, Contact, Submit, NotFound } from './pages/User'
-import { Login, VerifyOtp, Dashboard, Messages } from './pages/Admin'
+import { VerifySecret, VerifyOtp, Dashboard, Messages } from './pages/Admin'
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/submit" element={<Submit />} />
-        <Route path="/admin/login" element={<Login />} />
+        <Route path="/admin/verify-secret" element={<VerifySecret />} />
         <Route path="/admin">
           <Route index element={<Dashboard />} />
           <Route path="messages" element={<Messages />} />

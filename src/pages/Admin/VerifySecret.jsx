@@ -1,14 +1,14 @@
 import { useEffect } from 'react'
-import { AdminLogin } from '../../components/login'
+import { AdminVerifySecret } from '../../components/login'
 
-export const Login = () => {
+export const VerifySecret = () => {
   useEffect(() => {
     document.title = 'Admin Login | Portfolio'
   }, [])
 
   return (
     <div className=" bg-primary max-sm:px-5 sm:px-[5vw] lg:px-[80px]">
-      <AdminLogin />
+      <AdminVerifySecret />
     </div>
   )
 }
