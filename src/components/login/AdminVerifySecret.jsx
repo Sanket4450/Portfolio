@@ -28,7 +28,7 @@ export const AdminVerifySecret = () => {
         Login to the Admin Section
       </h1>
 
-      <div className=" my-14 space-y-2.5">
+      <div className=" my-14 space-y-3">
         <Box
           component="form"
           sx={{

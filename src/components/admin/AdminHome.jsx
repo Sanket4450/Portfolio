@@ -1,12 +1,18 @@
-import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { AdminDataCard } from './AdminDataCard'
+import { AdminButton } from './AdminButton'
 import { userDetails } from '../../data/user'
 import { messageIcons } from '../../data/messages'
+import { getRootData } from '../../api/root'
 
 export const AdminHome = () => {
-  const navigate = useNavigate()
   const theme = useSelector((state) => state.theme.value)
+  const [rootData, setRootData] = useState({})
+
+  useEffect(() => {
+    getRootData().then((data) => setRootData(data))
+  }, [])
 
   return (
     <section>
@@ -17,22 +23,22 @@ export const AdminHome = () => {
           <AdminDataCard
             icon={theme === 'dark' ? messageIcons.messageIconDark : messageIcons.messageIconLight}
             title="Total Messages"
-            count={285}
+            count={rootData.messagesCount ?? 'N/A'}
           />
           <AdminDataCard
             icon={theme === 'dark' ? messageIcons.unreadMessageIconDark : messageIcons.unreadMessageIconLight}
             title="Unread Messages"
-            count={285}
+            count={rootData.unreadMessagesCount ?? 'N/A'}
           />
           <AdminDataCard
             icon={theme === 'dark' ? messageIcons.readMessageIconDark : messageIcons.readMessageIconLight}
             title="Read Messages"
-            count={285}
+            count={rootData.readMessagesCount ?? 'N/A'}
           />
           <AdminDataCard
             icon={theme === 'dark' ? messageIcons.messageReplyIconDark : messageIcons.messageReplyIconLight}
             title="Total Replies"
-            count={285}
+            count={rootData.repliesCount ?? 'N/A'}
           />
         </div>
         <div className=" hidden sm:max-lg:block space-y-10">
@@ -62,15 +68,9 @@ export const AdminHome = () => {
           </div>
         </div>
         <div className=" flex max-sm:flex-col justify-evenly items-center max-sm:space-y-5 my-20">
-          <h2 className=" w-[70vw] sm:w-44 lg:w-64 text-center py-3 text-xl font-semibold hover:cursor-pointer text-bg-primary bg-text-theme-primary border-4 border-text-theme-primary rounded-md hover:text-primary hover:bg-primary transition duration-200" onClick={() => navigate('/admin/messages')}>
-            View Messages
-          </h2>
-          <h2 className=" w-[70vw] sm:w-44 lg:w-64 text-center py-3 text-xl font-semibold hover:cursor-pointer text-bg-primary bg-text-theme-primary border-4 border-text-theme-primary rounded-md hover:text-primary hover:bg-primary transition duration-200">
-            View Replies
-          </h2>
-          <h2 className=" w-[70vw] sm:w-44 lg:w-64 text-center py-3 text-xl font-semibold hover:cursor-pointer text-bg-primary bg-text-theme-primary border-4 border-text-theme-primary rounded-md hover:text-primary hover:bg-primary transition duration-200">
-            Logout
-          </h2>
+          <AdminButton text="View Messages" navigatePath="/admin/messages" />
+          <AdminButton text="View Replies" navigatePath="/admin/replies" />
+          <AdminButton text="Logout" navigatePath="#" />
         </div>
       </section>
     </section>

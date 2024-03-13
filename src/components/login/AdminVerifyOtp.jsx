@@ -79,7 +79,9 @@ export const AdminVerifyOtp = () => {
       {isOtpSent && (
         <p className=" text-gray-primary font-semibold text-center tracking-wide my-5">
           Didn't receive the verification OTP?
-          <span className=" text-theme-primary ml-2 hover:cursor-pointer hover:text-theme-hover-primary">Resend</span>
+          <span className=" text-theme-primary ml-2 hover:cursor-pointer hover:text-theme-hover-primary transition duration-200">
+            Resend
+          </span>
         </p>
       )}
     </section>
