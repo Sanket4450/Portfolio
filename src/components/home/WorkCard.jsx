@@ -16,9 +16,14 @@ export const WorkCard = ({ image, title, titleDesc, path, align }) => {
           <h3>—</h3>
           <h3>{titleDesc}</h3>
         </div>
-        <Link to={path} className=" text-theme-primary hover:text-theme-hover-primary text-sm transition duration-300">
-          See project <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-        </Link>
+        <div>
+          <Link
+            to={path}
+            className=" text-theme-primary hover:text-theme-hover-primary text-sm transition duration-300"
+          >
+            See project <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+          </Link>
+        </div>
       </div>
     </div>
   )

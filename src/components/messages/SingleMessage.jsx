@@ -28,7 +28,7 @@ export const SingleMessage = ({ messageId, firstName, lastName, email, isRead, r
         id={messageId}
         className=" h-28 phone:h-16 flex max-phone:flex-col justify-around phone:justify-between items-center bg-text-theme-primary text-bg-primary rounded-md hover:cursor-pointer"
       >
-        <div className=" pl-3 text-center">
+        <div className=" pl-3 max-phone:text-center">
           <p className=" font-semibold text-2xl phone:text-[22px]">
             {firstName} {lastName}
           </p>
