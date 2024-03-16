@@ -7,6 +7,7 @@ export const SingleMessage = ({
   firstName,
   lastName,
   email,
+  subject,
   isRead,
   receivedAt,
   isSelected,
@@ -21,7 +22,7 @@ export const SingleMessage = ({
           isRead ? 'font-light' : 'font-semibold'
         }`}
       >
-        <div className=" w-[3%] text-center">
+        <div className=" w-[4%] lg:w-[3%] flex justify-center">
           <Checkbox
             id={String(messageId)}
             sx={{
@@ -34,25 +35,26 @@ export const SingleMessage = ({
             onChange={() => handleSelection(messageId)}
           />
         </div>
-        <p className=" w-[25%] md:w-[20%] max-tab:text-sm text-center whitespace-nowrap overflow-hidden">
-          {firstName} {lastName}
-        </p>
-        <p className=" w-[45%] lg:w-[35%] max-tab:text-sm text-center">{email}</p>
-        <p className=" w-[27%] md:w-[20%] max-tab:text-sm text-center">{receivedAt.toDateString()}</p>
-        {screenWidth >= 1024 && <p className=" w-[10%] text-center">{isRead ? 'Read' : 'Unread'}</p>}
-        {screenWidth >= 768 && (
-          <div className=" w-[12%] text-center space-x-[10%]">
-            <FontAwesomeIcon icon={faReply} className=" text-lg hover:cursor-pointer hover:text-gray-strong" />
-            <FontAwesomeIcon icon={faTrash} className=" text-lg hover:cursor-pointer hover:text-gray-strong" />
+        <div className=" w-[22%] xl:w-[17%] flex justify-center">
+          <p className=" w-[95%] max-tab:text-sm text-center whitespace-nowrap overflow-hidden">
+            {firstName} {lastName}
+          </p>
+        </div>
+        <div className=" w-[50%] xl:w-[30%] flex justify-center">
+          <p className=" max-tab:text-sm text-center">{email}</p>
+        </div>
+        {screenWidth >= 1280 && (
+          <div className="  w-[35%] flex justify-center">
+            <p className="w-[95%] max-tab:text-sm whitespace-nowrap overflow-hidden">{subject}</p>
           </div>
         )}
+        <p className=" w-[24%] lg:w-[25%] xl:w-[15%] max-tab:text-sm text-center">{receivedAt.toDateString()}</p>
       </div>
     )
   } else {
     return (
       <div
         id={messageId}
-        ref={refMessage}
         className=" h-28 phone:h-16 flex max-phone:flex-col justify-around phone:justify-between items-center bg-text-theme-primary text-bg-primary rounded-md hover:cursor-pointer"
       >
         <div className=" pl-3 max-phone:text-center">
@@ -63,11 +65,6 @@ export const SingleMessage = ({
         </div>
         <div className=" pr-3 phone:h-[85%] max-phone:w-full py-0.5 flex phone:flex-col justify-between max-phone:items-center text-center">
           <p className=" text-sm max-phone:ml-3">{receivedAt.toDateString()}</p>
-          {!isRead && (
-            <p className=" bg-gray-weak text-primary max-phone:px-4 max-phone:py-1 max-phone:mr-1 text-center font-semibold text-sm rounded-lg">
-              Unread
-            </p>
-          )}
         </div>
       </div>
     )

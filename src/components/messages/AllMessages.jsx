@@ -32,6 +32,7 @@ export const AllMessages = () => {
           firstName="John"
           lastName="Doe"
           email="jonhdoe@gmail.com"
+          subject="Hellow World!"
           isRead={true}
           receivedAt={new Date()}
           isSelected={selectedMessages.includes(1)}
@@ -43,6 +44,7 @@ export const AllMessages = () => {
           firstName="Sanket"
           lastName="Talaviya"
           email="tonystark@gmail.com"
+          subject="I am resolving this issue regarding to react and redux!"
           isRead={false}
           receivedAt={new Date()}
           isSelected={selectedMessages.includes(2)}
@@ -54,6 +56,7 @@ export const AllMessages = () => {
           firstName="Steve"
           lastName="Rogers"
           email="www.talaviyasanket4455@gmail.com"
+          subject="This is my message!"
           isRead={false}
           receivedAt={new Date()}
           isSelected={selectedMessages.includes(3)}
