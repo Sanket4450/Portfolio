@@ -4,6 +4,7 @@ import { SingleMessage } from './SingleMessage'
 
 export const AllMessages = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+  const [selectedMessages, setSelectedMessages] = useState([])
 
   useEffect(() => {
     window.addEventListener('resize', () => setScreenWidth(window.innerWidth))
@@ -13,9 +14,17 @@ export const AllMessages = () => {
     }
   }, [])
 
+  const handleSelection = (messageId) => {
+    if (selectedMessages.includes(messageId)) {
+      setSelectedMessages(selectedMessages.filter((id) => id !== messageId))
+    } else {
+      setSelectedMessages([...selectedMessages, messageId])
+    }
+  }
+
   return (
     <div>
-      <h1 className="text-3xl text-center font-bold text-primary py-5">Admin Dashboard</h1>
+      <h1 className="text-3xl text-center font-bold text-primary py-5">Received Messages</h1>
       <div className=" max-sm:space-y-3">
         {screenWidth >= 640 && <MessagesHeader screenWidth={screenWidth} />}
         <SingleMessage
@@ -25,24 +34,30 @@ export const AllMessages = () => {
           email="jonhdoe@gmail.com"
           isRead={true}
           receivedAt={new Date()}
+          isSelected={selectedMessages.includes(1)}
+          handleSelection={handleSelection}
           screenWidth={screenWidth}
         />
         <SingleMessage
-          messageId={1}
-          firstName="Tony"
-          lastName="Stark"
+          messageId={2}
+          firstName="Sanket"
+          lastName="Talaviya"
           email="tonystark@gmail.com"
           isRead={false}
           receivedAt={new Date()}
+          isSelected={selectedMessages.includes(2)}
+          handleSelection={handleSelection}
           screenWidth={screenWidth}
         />
         <SingleMessage
-          messageId={1}
+          messageId={3}
           firstName="Steve"
           lastName="Rogers"
-          email="steverogers@gmail.com"
+          email="www.talaviyasanket4455@gmail.com"
           isRead={false}
           receivedAt={new Date()}
+          isSelected={selectedMessages.includes(3)}
+          handleSelection={handleSelection}
           screenWidth={screenWidth}
         />
       </div>

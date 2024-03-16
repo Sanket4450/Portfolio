@@ -24,5 +24,5 @@ export const DarkModeSwitch = () => {
     document.documentElement.setAttribute('theme', newTheme)
   }
 
-  return <MaterialUISwitch theme={currentTheme} checked={theme === 'dark'} onChange={toggleDarkMode} />
+  return <MaterialUISwitch id="switch1" theme={currentTheme} checked={theme === 'dark'} onChange={toggleDarkMode} />
 }

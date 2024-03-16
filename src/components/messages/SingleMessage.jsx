@@ -1,24 +1,47 @@
+import { Checkbox } from '@mui/material'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircle, faReply, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faReply, faTrash } from '@fortawesome/free-solid-svg-icons'
 
-export const SingleMessage = ({ messageId, firstName, lastName, email, isRead, receivedAt, screenWidth }) => {
+export const SingleMessage = ({
+  messageId,
+  firstName,
+  lastName,
+  email,
+  isRead,
+  receivedAt,
+  isSelected,
+  handleSelection,
+  screenWidth,
+}) => {
   if (screenWidth >= 640) {
     return (
       <div
         id={messageId}
-        className=" flex items-center h-10 text-primary border-b-4 border-text-theme-primary hover:cursor-pointer"
+        className={` flex items-center h-10 text-primary border-b-4 border-text-theme-primary hover:cursor-pointer ${
+          isRead ? 'font-light' : 'font-semibold'
+        }`}
       >
         <div className=" w-[3%] text-center">
-          {!isRead && <FontAwesomeIcon icon={faCircle} className=" text-theme-primary text-[12px]" />}
+          <Checkbox
+            id={String(messageId)}
+            sx={{
+              color: 'var(--text-theme-primary)',
+              '&.Mui-checked': {
+                color: 'var(--text-theme-hover-primary)',
+              },
+            }}
+            checked={isSelected}
+            onChange={() => handleSelection(messageId)}
+          />
         </div>
-        <p className=" w-[27%] md:w-[17%] text-center">
+        <p className=" w-[25%] md:w-[20%] max-tab:text-sm text-center whitespace-nowrap overflow-hidden">
           {firstName} {lastName}
         </p>
-        <p className=" w-[40%] md:w-[35%] text-center">{email}</p>
-        <p className=" w-[30%] md:w-[20%] text-center">{receivedAt.toDateString()}</p>
-        {screenWidth >= 768 && <p className=" w-[15%] text-center">{isRead ? 'Read' : 'Unread'}</p>}
+        <p className=" w-[45%] lg:w-[35%] max-tab:text-sm text-center">{email}</p>
+        <p className=" w-[27%] md:w-[20%] max-tab:text-sm text-center">{receivedAt.toDateString()}</p>
+        {screenWidth >= 1024 && <p className=" w-[10%] text-center">{isRead ? 'Read' : 'Unread'}</p>}
         {screenWidth >= 768 && (
-          <div className=" w-[10%] text-center space-x-[15%]">
+          <div className=" w-[12%] text-center space-x-[10%]">
             <FontAwesomeIcon icon={faReply} className=" text-lg hover:cursor-pointer hover:text-gray-strong" />
             <FontAwesomeIcon icon={faTrash} className=" text-lg hover:cursor-pointer hover:text-gray-strong" />
           </div>
@@ -29,6 +52,7 @@ export const SingleMessage = ({ messageId, firstName, lastName, email, isRead, r
     return (
       <div
         id={messageId}
+        ref={refMessage}
         className=" h-28 phone:h-16 flex max-phone:flex-col justify-around phone:justify-between items-center bg-text-theme-primary text-bg-primary rounded-md hover:cursor-pointer"
       >
         <div className=" pl-3 max-phone:text-center">
