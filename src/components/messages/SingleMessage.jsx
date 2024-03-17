@@ -1,5 +1,4 @@
 import { Checkbox } from '@mui/material'
-import { FiberManualRecord } from '@mui/icons-material'
 
 export const SingleMessage = ({
   messageId,
@@ -17,7 +16,7 @@ export const SingleMessage = ({
     return (
       <div
         id={messageId}
-        className={` flex items-center h-10 text-primary border-b-4 border-text-theme-primary hover:cursor-pointer ${
+        className={` bg-gray-weak-extra flex items-center h-10 text-primary border-b-4 border-text-theme-primary hover:cursor-pointer ${
           isRead ? 'font-light' : 'font-semibold'
         }`}
       >
@@ -54,7 +53,7 @@ export const SingleMessage = ({
     return (
       <div
         id={messageId}
-        className=" h-28 phone:h-[70px] flex max-phone:flex-col justify-around phone:justify-between bg-gray-weak-extra border-4 border-text-theme-primary text-primary rounded-md hover:cursor-pointer"
+        className=" h-28 phone:h-[78px] flex max-phone:flex-col phone:items-center justify-around phone:justify-between bg-gray-weak-extra border-4 border-text-theme-primary text-primary rounded-md hover:cursor-pointer"
       >
         <div className=" flex">
           <Checkbox
@@ -75,8 +74,8 @@ export const SingleMessage = ({
             <p className={` ${isRead ? 'font-light' : 'font-semibold'} phone:text-[14px]`}>{email}</p>
           </div>
         </div>
-        <div className=" pr-3 phone:h-[85%] max-phone:w-full py-0.5 flex phone:flex-col justify-between max-phone:items-center text-center">
-          <p className={` text-sm max-phone:ml-3 ${isRead ? 'font-light' : 'font-semibold'}`}>
+        <div className=" pr-3 phone:h-[85%] max-phone:w-[95%] max-phone:mx-auto max-phone:bg-gray-weak rounded-sm py-0.5 flex phone:flex-col justify-between max-phone:items-center text-center">
+          <p className={` text-sm phone:mt-1 max-phone:ml-2 ${isRead ? 'font-light' : 'font-semibold'}`}>
             {receivedAt.toDateString()}
           </p>
         </div>
