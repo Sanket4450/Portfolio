@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { MessageOptions } from './MessageOptions'
+import { MessageOptionsMobile } from './MessageOptionsMobile'
 import { MessagesHeader } from './MessagesHeader'
 import { SingleMessage } from './SingleMessage'
 
@@ -24,7 +26,12 @@ export const AllMessages = () => {
 
   return (
     <div>
-      <h1 className="text-3xl text-center font-bold text-primary py-5">Received Messages</h1>
+      <h1 className="text-3xl text-center font-bold text-primary mt-5">Received Messages</h1>
+      {screenWidth >= 640 ? (
+        <MessageOptions selectedMessages={selectedMessages} />
+      ) : (
+        <MessageOptionsMobile selectedMessages={selectedMessages} />
+      )}
       <div className=" max-sm:space-y-3">
         {screenWidth >= 640 && <MessagesHeader screenWidth={screenWidth} />}
         <SingleMessage
