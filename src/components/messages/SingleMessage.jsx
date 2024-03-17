@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Checkbox } from '@mui/material'
 
 export const SingleMessage = ({
@@ -12,6 +14,8 @@ export const SingleMessage = ({
   handleSelection,
   screenWidth,
 }) => {
+  const navigate = useNavigate()
+
   if (screenWidth >= 640) {
     return (
       <div
@@ -19,6 +23,7 @@ export const SingleMessage = ({
         className={` bg-gray-weak-extra flex items-center h-10 text-primary border-b-4 border-text-theme-primary hover:cursor-pointer ${
           isRead ? 'font-light' : 'font-semibold'
         }`}
+        onClick={() => navigate(messageId)}
       >
         <div className=" w-[4%] lg:w-[3%] flex justify-center">
           <Checkbox

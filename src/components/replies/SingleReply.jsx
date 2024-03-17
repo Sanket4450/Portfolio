@@ -20,8 +20,14 @@ export const SingleReply = ({ replyId, subject, description, isRead, sentAt, isS
         />
       </div>
       <div className=" space-y-2" style={{ width: 'calc(100% - 48px)' }}>
-        <p className=" bg-text-theme-primary text-bg-primary text-lg font-semibold rounded-md px-2">{subject}</p>
-        <p className=" bg-greenGray text-black rounded-md px-2">{description}</p>
+        <div className=" space-y-2">
+          <p className=" bg-text-theme-primary text-bg-primary text-lg font-semibold rounded-md px-2">Subject</p>
+          <p className=" bg-greenGray text-black rounded-md px-2">{subject}</p>
+        </div>
+        <div className=" space-y-2">
+          <p className=" bg-text-theme-primary text-bg-primary text-lg font-semibold rounded-md px-2">Description</p>
+          <p className=" bg-greenGray text-black rounded-md px-2">{description}</p>
+        </div>
         <p className=" flex justify-end text-sm font-semibold rounded-sm px-2 py-0.5">{sentAt.toDateString()}</p>
       </div>
     </div>

@@ -25,7 +25,7 @@ export const AllMessages = () => {
   }
 
   return (
-    <div>
+    <section>
       <h1 className=" text-xl phone:text-3xl text-center font-bold text-primary mt-5">Received Messages</h1>
       {screenWidth >= 640 ? (
         <MessageOptions selectedMessages={selectedMessages} />
@@ -71,6 +71,6 @@ export const AllMessages = () => {
           screenWidth={screenWidth}
         />
       </div>
-    </div>
+    </section>
   )
 }

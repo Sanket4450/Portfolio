@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Header } from './components/header'
 import { Footer } from './components/footer'
 import { Home, Skills, Projects, About, Contact, Submit, NotFound } from './pages/User'
-import { VerifySecret, VerifyOtp, Dashboard, Messages, Replies } from './pages/Admin'
+import { VerifySecret, VerifyOtp, Dashboard, Messages, Message, Replies } from './pages/Admin'
 
 function App() {
   return (
@@ -21,7 +21,10 @@ function App() {
         <Route path="/admin">
           <Route index element={<Dashboard />} />
           <Route path="verify-otp" element={<VerifyOtp />} />
-          <Route path="messages" element={<Messages />} />
+          <Route path="messages">
+            <Route index element={<Messages />} />
+            <Route path=":messageId" element={<Message />} />
+          </Route>
           <Route path="replies" element={<Replies />} />
         </Route>
         <Route path="*" element={<NotFound />} />
