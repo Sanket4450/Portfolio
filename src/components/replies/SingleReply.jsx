@@ -4,7 +4,7 @@ export const SingleReply = ({ replyId, subject, description, isRead, sentAt, isS
   return (
     <div
       id={replyId}
-      className={` bg-gray-weak-extra py-2 flex text-primary border-4 border-text-theme-primary rounded-md hover:cursor-pointer ${isRead} ? 'font-light' : 'font-semibold'`}
+      className={` bg-gray-weak-extra py-2 flex text-primary border-4 border-text-theme-primary rounded-md ${isRead} ? 'font-light' : 'font-semibold'`}
     >
       <div className=" w-10 flex justify-center items-start">
         <Checkbox

@@ -4,7 +4,6 @@ import { FullMessage } from '../../components/messages'
 
 export const Message = () => {
   const { messageId } = useParams()
-  console.log(messageId)
 
   useEffect(() => {
     document.title = `Received Message ID - ${messageId} - Admin Dashboard | Portfolio`
