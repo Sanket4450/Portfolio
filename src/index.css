@@ -9,8 +9,9 @@
     --text-theme-primary: #06b921;
     --text-theme-hover-primary: #07ef2a;
     --gray-primary: #7c827d;
-    --gray-weak: #30332f;
     --gray-strong: #a6aba6;
+    --gray-weak: #30332f;
+    --gray-weak-extra: #191a19;
   }
 }
 
@@ -20,8 +21,9 @@
   --text-theme-primary: #06b921;
   --text-theme-hover-primary: #07ef2a;
   --gray-primary: #7c827d;
-  --gray-weak: #30332f;
   --gray-strong: #a6aba6;
+  --gray-weak: #30332f;
+  --gray-weak-extra: #191a19;
   background-color: var(--bg-primary);
 }
 
@@ -31,7 +33,8 @@
   --text-theme-primary: #019217;
   --text-theme-hover-primary: #067917;
   --gray-primary: #5e6360;
-  --gray-weak: #dedede;
   --gray-strong: #30332f;
+  --gray-weak: #dedede;
+  --gray-weak-extra: #efefef;
   background-color: var(--bg-primary);
 }

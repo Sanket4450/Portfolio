@@ -15,7 +15,7 @@ export const MessageOptionsMobile = ({ selectedMessages }) => {
   }
 
   return (
-    <div className=" flex justify-end">
+    <div className=" flex justify-end py-2">
       <IconButton
         aria-label="more"
         id="long-button"

@@ -1,6 +1,5 @@
 import { Checkbox } from '@mui/material'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faReply, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { FiberManualRecord } from '@mui/icons-material'
 
 export const SingleMessage = ({
   messageId,
@@ -55,16 +54,31 @@ export const SingleMessage = ({
     return (
       <div
         id={messageId}
-        className=" h-28 phone:h-16 flex max-phone:flex-col justify-around phone:justify-between items-center bg-text-theme-primary text-bg-primary rounded-md hover:cursor-pointer"
+        className=" h-28 phone:h-[70px] flex max-phone:flex-col justify-around phone:justify-between bg-gray-weak-extra border-4 border-text-theme-primary text-primary rounded-md hover:cursor-pointer"
       >
-        <div className=" pl-3 max-phone:text-center">
-          <p className=" font-semibold text-2xl phone:text-[22px]">
-            {firstName} {lastName}
-          </p>
-          <p className=" phone:text-[14px]">{email}</p>
+        <div className=" flex">
+          <Checkbox
+            id={String(messageId)}
+            sx={{
+              color: 'var(--text-theme-primary)',
+              '&.Mui-checked': {
+                color: 'var(--text-theme-hover-primary)',
+              },
+            }}
+            checked={isSelected}
+            onChange={() => handleSelection(messageId)}
+          />
+          <div className=" overflow-scroll">
+            <p className={` text-2xl phone:text-[22px] ${isRead ? 'font-light' : 'font-semibold'}`}>
+              {firstName} {lastName}
+            </p>
+            <p className={` ${isRead ? 'font-light' : 'font-semibold'} phone:text-[14px]`}>{email}</p>
+          </div>
         </div>
         <div className=" pr-3 phone:h-[85%] max-phone:w-full py-0.5 flex phone:flex-col justify-between max-phone:items-center text-center">
-          <p className=" text-sm max-phone:ml-3">{receivedAt.toDateString()}</p>
+          <p className={` text-sm max-phone:ml-3 ${isRead ? 'font-light' : 'font-semibold'}`}>
+            {receivedAt.toDateString()}
+          </p>
         </div>
       </div>
     )
