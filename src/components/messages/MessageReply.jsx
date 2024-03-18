@@ -7,9 +7,11 @@ export const MessageReply = ({ email }) => {
       <MessageField messageKey="Reply To" messageValue={email} />
       <MesageReplyInput inputKey="Message Subject" inputRows={1} inputName="subject" />
       <MesageReplyInput inputKey="Message Content" inputRows={10} inputName="description" />
-      <button className=" bg-text-theme-primary hover:bg-text-theme-hover-primary text-bg-primary font-semibold rounded-md px-10 py-2 ml-2 my-1">
-        Send
-      </button>
+      <div className=" flex max-phone:justify-center">
+        <button className=" bg-text-theme-primary hover:bg-text-theme-hover-primary text-bg-primary font-semibold rounded-md max-phone:w-full max-phone:mx-2 phone:px-10 py-2 phone:ml-2 my-1 transition duration-200">
+          Send
+        </button>
+      </div>
     </div>
   )
 }
