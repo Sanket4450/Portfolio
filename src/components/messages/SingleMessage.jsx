@@ -22,7 +22,6 @@ export const SingleMessage = ({
         className={` bg-gray-weak-extra flex items-center h-10 text-primary border-b-4 border-text-theme-primary hover:cursor-pointer ${
           isRead ? 'font-light' : 'font-semibold'
         }`}
-        onClick={() => navigate(String(messageId))}
       >
         <div className=" w-[4%] lg:w-[3%] flex justify-center">
           <Checkbox
@@ -37,20 +36,25 @@ export const SingleMessage = ({
             onChange={() => handleSelection(messageId)}
           />
         </div>
-        <div className=" w-[22%] xl:w-[17%] flex justify-center">
+        <div className=" w-[22%] xl:w-[17%] flex justify-center" onClick={() => navigate(String(messageId))}>
           <p className=" w-[95%] max-tab:text-sm text-center whitespace-nowrap overflow-hidden">
             {firstName} {lastName}
           </p>
         </div>
-        <div className=" w-[50%] xl:w-[30%] flex justify-center">
+        <div className=" w-[50%] xl:w-[30%] flex justify-center" onClick={() => navigate(String(messageId))}>
           <p className=" max-tab:text-sm text-center">{email}</p>
         </div>
         {screenWidth >= 1280 && (
-          <div className="  w-[35%] flex justify-center">
+          <div className="  w-[35%] flex justify-center" onClick={() => navigate(String(messageId))}>
             <p className="w-[95%] max-tab:text-sm whitespace-nowrap overflow-hidden">{subject}</p>
           </div>
         )}
-        <p className=" w-[24%] lg:w-[25%] xl:w-[15%] max-tab:text-sm text-center">{receivedAt.toDateString()}</p>
+        <p
+          className=" w-[24%] lg:w-[25%] xl:w-[15%] max-tab:text-sm text-center"
+          onClick={() => navigate(String(messageId))}
+        >
+          {receivedAt.toDateString()}
+        </p>
       </div>
     )
   } else {
