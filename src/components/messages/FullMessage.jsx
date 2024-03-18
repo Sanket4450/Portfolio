@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { FullMessageOptions } from './FullMessageOptions'
 import { MessageField } from './MessageField'
+import { MessageReply } from './MessageReply'
 
 export const FullMessage = ({ id }) => {
   const [isRead, setIsRead] = useState(false)
@@ -33,6 +34,7 @@ export const FullMessage = ({ id }) => {
         <MessageField messageKey="Date Received" messageValue={user.dateReceived.toDateString()} />
         <MessageField messageKey="Message Status" messageValue={isRead ? 'Read' : 'Unread'} />
       </div>
+      <MessageReply email={user.email} />
     </section>
   )
 }

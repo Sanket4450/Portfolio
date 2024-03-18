@@ -37,12 +37,12 @@ export const FormTextField = ({ width, label, name, value, onChange, onBlur, hel
             color: 'var(--text-theme-primary)',
           },
           '& .MuiFormHelperText-root': {
-            color: 'var(--gray-strong)', // Helper text color
-            fontSize: '14px', // Example additional style for font size
+            color: 'var(--gray-strong)',
+            fontSize: '14px',
             marginLeft: 0,
           },
           '& .MuiFormHelperText-contained': {
-            marginTop: '5px', // Example additional style for contained helper text
+            marginTop: '5px',
           },
           '& > :not(style)': { color: 'var(--text-primary)' },
         }}
