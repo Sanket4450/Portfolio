@@ -1,63 +1,105 @@
 import { useState } from 'react'
 import { IconButton, Menu, MenuItem } from '@mui/material'
-import { MoreVert, MarkEmailRead, MarkEmailUnread, Delete, MailOutline } from '@mui/icons-material'
+import { MoreVert, MarkEmailRead, MarkEmailUnread, Delete, MailOutline, Sort } from '@mui/icons-material'
+import { MessageMenuItem } from './MessageMenuItem'
 
 export const MessageOptionsMobile = ({ selectedMessages }) => {
-  const [anchorEl, setAnchorEl] = useState(null)
-  const open = Boolean(anchorEl)
+  const [infoAnchorEl, setInfoAnchorEl] = useState(null)
+  const [sortAnchorEl, setSortAnchorEl] = useState(null)
+  const infoOpen = Boolean(infoAnchorEl)
+  const sortOpen = Boolean(sortAnchorEl)
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget)
+  const handleInfoClick = (event) => {
+    setInfoAnchorEl(event.currentTarget)
   }
 
-  const handleClose = () => {
-    setAnchorEl(null)
+  const handleInfoClose = () => {
+    setInfoAnchorEl(null)
+  }
+
+  const handleSortClick = (event) => {
+    setSortAnchorEl(event.currentTarget)
+  }
+
+  const handleSortClose = () => {
+    setSortAnchorEl(null)
   }
 
   return (
     <div className=" flex justify-end py-2">
-      <IconButton
-        aria-label="more"
-        id="long-button"
-        aria-controls={open ? 'long-menu' : undefined}
-        aria-expanded={open ? 'true' : undefined}
-        aria-haspopup="true"
-        onClick={handleClick}
-      >
-        <MoreVert className=" text-primary" />
-      </IconButton>
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-        {selectedMessages.length > 0 && (
-          <MenuItem className=" space-x-2" onClick={handleClose}>
-            <MarkEmailRead />
-            <p>Mark as read</p>
+      <div>
+        <IconButton
+          aria-label="more"
+          id="long-button"
+          aria-controls={sortOpen ? 'long-menu' : undefined}
+          aria-expanded={sortOpen ? 'true' : undefined}
+          aria-haspopup="true"
+          onClick={handleSortClick}
+        >
+          <Sort className=" text-primary" />
+        </IconButton>
+        <Menu
+          id="basic-menu"
+          anchorEl={sortAnchorEl}
+          open={sortOpen}
+          onClose={handleSortClose}
+          MenuListProps={{
+            'aria-labelledby': 'basic-button',
+          }}
+        >
+          <MessageMenuItem itemId="newest" text="Newest First" onClick={handleSortClose} />
+          <MessageMenuItem itemId="oldest" text="Oldest First" onClick={handleSortClose} />
+          <MessageMenuItem itemId="name_asc" text="Name Ascending" onClick={handleSortClose} />
+          <MessageMenuItem itemId="name_desc" text="Name Descending" onClick={handleSortClose} />
+          <MessageMenuItem itemId="email_asc" text="Email Ascending" onClick={handleSortClose} />
+          <MessageMenuItem itemId="email_desc" text="Email Descending" onClick={handleSortClose} />
+          <MessageMenuItem itemId="unread" text="Unread" onClick={handleSortClose} />
+        </Menu>
+      </div>
+      <div>
+        <IconButton
+          aria-label="more"
+          id="long-button"
+          aria-controls={infoOpen ? 'long-menu' : undefined}
+          aria-expanded={infoOpen ? 'true' : undefined}
+          aria-haspopup="true"
+          onClick={handleInfoClick}
+        >
+          <MoreVert className=" text-primary" />
+        </IconButton>
+        <Menu
+          id="basic-menu"
+          anchorEl={infoAnchorEl}
+          open={infoOpen}
+          onClose={handleInfoClose}
+          MenuListProps={{
+            'aria-labelledby': 'basic-button',
+          }}
+        >
+          {selectedMessages.length > 0 && (
+            <MenuItem className=" space-x-2" onClick={handleInfoClose}>
+              <MarkEmailRead />
+              <p>Mark as read</p>
+            </MenuItem>
+          )}
+          {selectedMessages.length > 0 && (
+            <MenuItem className=" space-x-2" onClick={handleInfoClose}>
+              <MarkEmailUnread />
+              <p>Mark as Unread</p>
+            </MenuItem>
+          )}
+          {selectedMessages.length > 0 && (
+            <MenuItem className=" space-x-2" onClick={handleInfoClose}>
+              <Delete />
+              <p>Delete</p>
+            </MenuItem>
+          )}
+          <MenuItem className=" space-x-2" onClick={handleInfoClose}>
+            <MailOutline />
+            <p>Mark all as read</p>
           </MenuItem>
-        )}
-        {selectedMessages.length > 0 && (
-          <MenuItem className=" space-x-2" onClick={handleClose}>
-            <MarkEmailUnread />
-            <p>Mark as Unread</p>
-          </MenuItem>
-        )}
-        {selectedMessages.length > 0 && (
-          <MenuItem className=" space-x-2" onClick={handleClose}>
-            <Delete />
-            <p>Delete</p>
-          </MenuItem>
-        )}
-        <MenuItem className=" space-x-2" onClick={handleClose}>
-          <MailOutline />
-          <p>Mark all as read</p>
-        </MenuItem>
-      </Menu>
+        </Menu>
+      </div>
     </div>
   )
 }
