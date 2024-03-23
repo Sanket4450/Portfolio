@@ -3,7 +3,7 @@ import { MesageReplyInput } from './MesageReplyInput.jsx'
 
 export const MessageReply = ({ email }) => {
   return (
-    <div className=" border-4 border-text-theme-primary rounded-md mx-2 my-5 p-2">
+    <div className=" border-4 border-gray-weak rounded-md mx-2 my-5 p-2">
       <MessageField messageKey="Reply To" messageValue={email} />
       <MesageReplyInput inputKey="Message Subject" inputRows={1} inputName="subject" />
       <MesageReplyInput inputKey="Message Content" inputRows={10} inputName="description" />

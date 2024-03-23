@@ -23,7 +23,7 @@ export const FullMessage = ({ id }) => {
   }, [])
 
   return (
-    <section>
+    <section className=" border-4 border-gray-weak rounded-md mx-2 my-5 p-2">
       <FullMessageOptions isRead={isRead} setIsRead={setIsRead} />
       <div>
         <MessageField messageKey="Sender Name" messageValue={`${user.firstName} ${user.lastName}`} />

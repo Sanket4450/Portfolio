@@ -6,6 +6,8 @@ import { MessageMenuItem } from './MessageMenuItem'
 export const MessageOptionsMobile = ({ selectedMessages }) => {
   const [infoAnchorEl, setInfoAnchorEl] = useState(null)
   const [sortAnchorEl, setSortAnchorEl] = useState(null)
+  const [selectedInfoMenuItem, setSelectedInfoMenuItem] = useState(null)
+  const [selectedSortMenuItem, setSelectedSortMenuItem] = useState(null)
   const infoOpen = Boolean(infoAnchorEl)
   const sortOpen = Boolean(sortAnchorEl)
 
@@ -13,16 +15,18 @@ export const MessageOptionsMobile = ({ selectedMessages }) => {
     setInfoAnchorEl(event.currentTarget)
   }
 
-  const handleInfoClose = () => {
-    setInfoAnchorEl(null)
-  }
-
   const handleSortClick = (event) => {
     setSortAnchorEl(event.currentTarget)
   }
 
-  const handleSortClose = () => {
+   const handleInfoClose = (event) => {
+     setInfoAnchorEl(null)
+     setSelectedInfoMenuItem(event.target.id)
+   }
+
+  const handleSortClose = (event) => {
     setSortAnchorEl(null)
+    setSelectedSortMenuItem(event.target.id)
   }
 
   return (
