@@ -19,7 +19,7 @@ export const SingleMessage = ({
     return (
       <div
         id={messageId}
-        className={` bg-gray-weak-extra flex items-center h-10 text-primary border-b-4 border-text-theme-primary hover:cursor-pointer ${
+        className={` bg-gray-weak-extra flex items-center h-10 text-primary border-b-4 border-gray-primary hover:cursor-pointer ${
           isRead ? 'font-light' : 'font-semibold'
         }`}
       >
