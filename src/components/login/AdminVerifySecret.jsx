@@ -1,14 +1,11 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { Box, TextField } from '@mui/material'
 import { userDetails } from '../../data/user'
 
-export const AdminVerifySecret = () => {
+export const AdminVerifySecret = ({ setIsSecretVerified }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-  const [otp, setOTP] = useState(['', '', '', '', '', ''])
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
-  const navigate = useNavigate()
 
   useEffect(() => {
     window.addEventListener('resize', () => setScreenWidth(window.innerWidth))
@@ -41,6 +38,7 @@ export const AdminVerifySecret = () => {
           <TextField
             label="Admin Secret"
             variant="outlined"
+            helperText={errorMessage}
             spellCheck={false}
             autoComplete="off"
             sx={{
@@ -60,6 +58,7 @@ export const AdminVerifySecret = () => {
               },
               '& .MuiFormHelperText-root': {
                 color: 'var(--gray-strong)',
+                fontWeight: 'bold',
                 fontSize: '14px',
                 marginLeft: 0,
               },

@@ -1,13 +1,24 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import OtpInput from 'react-otp-input'
 import { verificationLogos } from '../../data/auth'
 
-export const AdminVerifyOtp = () => {
+export const AdminVerifyOtp = ({ isSecretVerified, isOtpVerified, setIsOtpVerified }) => {
+  const navigate = useNavigate()
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+  const [loading, setLoading] = useState(false)
   const theme = useSelector((state) => state.theme.value)
   const [otp, setOtp] = useState('')
   const [isOtpSent, setIsOtpSent] = useState(localStorage.getItem('isOtpSent') === 'true' ? true : false)
+
+  useEffect(() => {
+    !isSecretVerified && navigate('/admin/verify-secret')
+  }, [isSecretVerified])
+
+  useEffect(() => {
+    isOtpVerified && navigate('/admin')
+  }, [isOtpVerified])
 
   useEffect(() => {
     window.addEventListener('resize', () => setScreenWidth(window.innerWidth))
