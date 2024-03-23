@@ -1,0 +1,1 @@
+export { getAdminRootData } from './getRootData'
