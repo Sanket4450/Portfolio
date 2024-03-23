@@ -1,11 +1,24 @@
 import { useState, useEffect } from 'react'
+import { useFormik } from 'formik'
 import { Box, TextField } from '@mui/material'
 import { userDetails } from '../../data/user'
+import { secretSchema } from '../../schemas'
+import { verifyAdminSecret } from '../../api/admin'
 
 export const AdminVerifySecret = ({ setIsSecretVerified }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
+
+  const initialValues = {
+    secret: '',
+  }
+
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
+    initialValues,
+    validationSchema: secretSchema,
+    onSubmit: (values, action) => {},
+  })
 
   useEffect(() => {
     window.addEventListener('resize', () => setScreenWidth(window.innerWidth))
@@ -38,9 +51,15 @@ export const AdminVerifySecret = ({ setIsSecretVerified }) => {
           <TextField
             label="Admin Secret"
             variant="outlined"
-            helperText={errorMessage}
+            name="secret"
+            helperText={
+              touched.secret && errors.secret ? `* ${errors.secret}` : errorMessage ? `* ${errorMessage}` : null
+            }
             spellCheck={false}
             autoComplete="off"
+            value={values.secret}
+            onBlur={handleBlur}
+            onChange={handleChange}
             sx={{
               '& .MuiOutlinedInput-root': {
                 '& fieldset': {
@@ -70,8 +89,10 @@ export const AdminVerifySecret = ({ setIsSecretVerified }) => {
           />
         </Box>
         <button
+          type="submit"
           style={{ width: screenWidth < 640 ? '95%' : '550px' }}
           className=" w-48 h-12 rounded-md text-bg-primary bg-text-theme-primary hover:bg-text-theme-hover-primary transition duration-200 text-2xl"
+          onClick={handleSubmit}
         >
           Submit
         </button>
