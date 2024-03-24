@@ -7,11 +7,23 @@ import { secretSchema } from '../../schemas'
 import { verifyAdminSecret } from '../../api/admin'
 import { setItem } from '../../utils/localStorage'
 
-export const AdminVerifySecret = ({ setIsSecretVerified }) => {
+export const AdminVerifySecret = ({ isSecretVerified, setIsSecretVerified }) => {
   const navigate = useNavigate()
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
+
+  useEffect(() => {
+    isSecretVerified && navigate('/admin/verify-otp')
+  }, [isSecretVerified])
+
+  useEffect(() => {
+    window.addEventListener('resize', () => setScreenWidth(window.innerWidth))
+
+    return () => {
+      window.removeEventListener('resize', () => setScreenWidth(window.innerWidth))
+    }
+  }, [])
 
   const initialValues = {
     secret: '',
@@ -31,14 +43,6 @@ export const AdminVerifySecret = ({ setIsSecretVerified }) => {
         .catch((error) => setErrorMessage(error.message))
     },
   })
-
-  useEffect(() => {
-    window.addEventListener('resize', () => setScreenWidth(window.innerWidth))
-
-    return () => {
-      window.removeEventListener('resize', () => setScreenWidth(window.innerWidth))
-    }
-  }, [])
 
   return (
     <section className=" text-center">

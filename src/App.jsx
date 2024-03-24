@@ -29,7 +29,10 @@ function App() {
         <Route path="/submit" element={<Submit />} />
         <Route path="/admin">
           <Route index element={<Dashboard />} />
-          <Route path="verify-secret" element={<VerifySecret setIsSecretVerified={setIsSecretVerified} />} />
+          <Route
+            path="verify-secret"
+            element={<VerifySecret isSecretVerified={isSecretVerified} setIsSecretVerified={setIsSecretVerified} />}
+          />
           <Route
             path="verify-otp"
             element={

@@ -6,4 +6,5 @@ export const sendAdminOtp = async () => {
   if (!data.success) {
     throw Error(data.message)
   }
+  return data.message
 }
