@@ -5,6 +5,7 @@ import { Box, TextField } from '@mui/material'
 import { userDetails } from '../../data/user'
 import { secretSchema } from '../../schemas'
 import { verifyAdminSecret } from '../../api/admin'
+import { setItem } from '../../utils/localStorage'
 
 export const AdminVerifySecret = ({ setIsSecretVerified }) => {
   const navigate = useNavigate()
@@ -23,6 +24,7 @@ export const AdminVerifySecret = ({ setIsSecretVerified }) => {
       verifyAdminSecret(values.secret)
         .then(() => {
           action.resetForm()
+          setItem('isSecretVerified', true)
           setIsSecretVerified(true)
           navigate('/admin/verify-otp')
         })

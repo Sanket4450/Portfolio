@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import OtpInput from 'react-otp-input'
 import { verificationLogos } from '../../data/auth'
+import { sendAdminOtp, verifyAdminOtp } from '../../api/admin'
+import { getItem, setItem } from '../../utils/localStorage'
 
 export const AdminVerifyOtp = ({ isSecretVerified, isOtpVerified, setIsOtpVerified }) => {
   const navigate = useNavigate()
@@ -10,7 +12,11 @@ export const AdminVerifyOtp = ({ isSecretVerified, isOtpVerified, setIsOtpVerifi
   const [loading, setLoading] = useState(false)
   const theme = useSelector((state) => state.theme.value)
   const [otp, setOtp] = useState('')
-  const [isOtpSent, setIsOtpSent] = useState(localStorage.getItem('isOtpSent') === 'true' ? true : false)
+  const [isOtpSent, setIsOtpSent] = useState(getItem('isOtpSent') === 'true' ? true : false)
+
+  const handleOtpSend = () => {
+    sendAdminOtp().then().catch()
+  }
 
   useEffect(() => {
     !isSecretVerified && navigate('/admin/verify-secret')

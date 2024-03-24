@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { getItem } from './utils/localStorage'
 import { Header } from './components/header'
 import { Footer } from './components/footer'
 import { Home, Skills, Projects, About, Contact, Submit, NotFound } from './pages/User'
@@ -8,6 +9,11 @@ import { VerifySecret, VerifyOtp, Dashboard, Messages, Message, Replies } from '
 function App() {
   const [isSecretVerified, setIsSecretVerified] = useState(false)
   const [isOtpVerified, setIsOtpVerified] = useState(false)
+
+  useEffect(() => {
+    getItem('isSecretVerified') === 'true' && setIsSecretVerified(true)
+    getItem('isOtpVerified') === 'true' && setIsOtpVerified(true)
+  }, [])
 
   return (
     <Router>
