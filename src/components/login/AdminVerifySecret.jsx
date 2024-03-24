@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik'
 import { Box, TextField } from '@mui/material'
 import { userDetails } from '../../data/user'
@@ -6,6 +7,7 @@ import { secretSchema } from '../../schemas'
 import { verifyAdminSecret } from '../../api/admin'
 
 export const AdminVerifySecret = ({ setIsSecretVerified }) => {
+  const navigate = useNavigate()
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
@@ -17,7 +19,15 @@ export const AdminVerifySecret = ({ setIsSecretVerified }) => {
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues,
     validationSchema: secretSchema,
-    onSubmit: (values, action) => {},
+    onSubmit: (values, action) => {
+      verifyAdminSecret(values.secret)
+        .then(() => {
+          action.resetForm()
+          setIsSecretVerified(true)
+          navigate('/admin/verify-otp')
+        })
+        .catch((error) => setErrorMessage(error.message))
+    },
   })
 
   useEffect(() => {

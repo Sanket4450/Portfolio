@@ -7,7 +7,7 @@ import { VerifySecret, VerifyOtp, Dashboard, Messages, Message, Replies } from '
 
 function App() {
   const [isSecretVerified, setIsSecretVerified] = useState(false)
-  const [isOtpVerified, setIsOtpVerified] = useState(true)
+  const [isOtpVerified, setIsOtpVerified] = useState(false)
 
   return (
     <Router>
