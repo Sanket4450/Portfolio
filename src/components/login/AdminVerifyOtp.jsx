@@ -55,10 +55,11 @@ export const AdminVerifyOtp = ({ isSecretVerified, isOtpVerified, setIsOtpVerifi
 
   const handleOtpVerify = () => {
     verifyAdminOtp(parseInt(otp))
-      .then(() => {
+      .then((data) => {
         removeItem('isOtpSent')
         setItem('isOtpVerified', true)
         setIsOtpVerified(true)
+        setItem('token', data.accessToken)
         navigate('/admin')
       })
       .catch((error) => setOtpSendErrorMessage(error.message))

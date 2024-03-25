@@ -9,10 +9,12 @@ import { VerifySecret, VerifyOtp, Dashboard, Messages, Message, Replies } from '
 function App() {
   const [isSecretVerified, setIsSecretVerified] = useState(false)
   const [isOtpVerified, setIsOtpVerified] = useState(false)
+  const [token, setToken] = useState('')
 
   useEffect(() => {
     getItem('isSecretVerified') === 'true' && setIsSecretVerified(true)
     getItem('isOtpVerified') === 'true' && setIsOtpVerified(true)
+    getItem('token') && setToken(getItem('token'))
   }, [])
 
   return (

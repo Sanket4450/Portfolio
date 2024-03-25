@@ -6,4 +6,5 @@ export const verifyAdminOtp = async (otp) => {
   if (!data.success) {
     throw Error(data.message)
   }
+  return data.results
 }
