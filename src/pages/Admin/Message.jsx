@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { FullMessage } from '../../components/messages'
 
-export const Message = () => {
+export const Message = ({ token }) => {
   const { messageId } = useParams()
 
   useEffect(() => {
@@ -11,7 +11,7 @@ export const Message = () => {
 
   return (
     <div className=" bg-primary max-sm:px-5 sm:px-[5vw] lg:px-[80px]">
-      <FullMessage id={messageId} />
+      <FullMessage id={messageId} token={token} />
     </div>
   )
 }

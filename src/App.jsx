@@ -6,7 +6,7 @@ import { Footer } from './components/footer'
 import { Home, Skills, Projects, About, Contact, Submit, NotFound } from './pages/User'
 import { VerifySecret, VerifyOtp, Dashboard, Messages, Message, Replies } from './pages/Admin'
 
-function App() {
+const App = () => {
   const [isSecretVerified, setIsSecretVerified] = useState(false)
   const [isOtpVerified, setIsOtpVerified] = useState(false)
   const [token, setToken] = useState('')
@@ -30,7 +30,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/submit" element={<Submit />} />
         <Route path="/admin">
-          <Route index element={<Dashboard />} />
+          <Route index element={token && <Dashboard token={token} />} />
           <Route
             path="verify-secret"
             element={<VerifySecret isSecretVerified={isSecretVerified} setIsSecretVerified={setIsSecretVerified} />}
@@ -46,10 +46,10 @@ function App() {
             }
           />
           <Route path="messages">
-            <Route index element={<Messages />} />
-            <Route path=":messageId" element={<Message />} />
+            <Route index element={token && <Messages token={token} />} />
+            <Route path=":messageId" element={token && <Message token={token} />} />
           </Route>
-          <Route path="replies" element={<Replies />} />
+          <Route path="replies" element={token && <Replies token={token} />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

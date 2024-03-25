@@ -4,7 +4,7 @@ import { MessageOptionsMobile } from './MessageOptionsMobile'
 import { MessagesHeader } from './MessagesHeader'
 import { SingleMessage } from './SingleMessage'
 
-export const AllMessages = () => {
+export const AllMessages = ({ token }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   const [selectedMessages, setSelectedMessages] = useState([])
 

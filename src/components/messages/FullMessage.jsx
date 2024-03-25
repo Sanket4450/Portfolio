@@ -3,7 +3,7 @@ import { FullMessageOptions } from './FullMessageOptions'
 import { MessageField } from './MessageField'
 import { MessageReply } from './MessageReply'
 
-export const FullMessage = ({ id }) => {
+export const FullMessage = ({ id, token }) => {
   const [isRead, setIsRead] = useState(false)
 
   const user = {

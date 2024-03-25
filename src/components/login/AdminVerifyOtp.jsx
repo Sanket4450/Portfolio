@@ -14,6 +14,7 @@ export const AdminVerifyOtp = ({ isSecretVerified, isOtpVerified, setIsOtpVerifi
   const [otp, setOtp] = useState('')
   const [otpSendMessage, setOtpSendMessage] = useState('')
   const [otpSendErrorMessage, setOtpSendErrorMessage] = useState('')
+  const [otpVerifyErrorMessage, setOtpVerifyErrorMessage] = useState('')
   const [isOtpSent, setIsOtpSent] = useState(getItem('isOtpSent') === 'true' ? true : false)
 
   useEffect(() => {
@@ -62,7 +63,7 @@ export const AdminVerifyOtp = ({ isSecretVerified, isOtpVerified, setIsOtpVerifi
         setItem('token', data.accessToken)
         navigate('/admin')
       })
-      .catch((error) => setOtpSendErrorMessage(error.message))
+      .catch((error) => setOtpVerifyErrorMessage(error.message))
   }
 
   return (
@@ -96,6 +97,11 @@ export const AdminVerifyOtp = ({ isSecretVerified, isOtpVerified, setIsOtpVerifi
           }}
         />
         {otpSendErrorMessage && (
+          <p className=" w-[85vw] phone:w-[400px] mx-auto mt-1.5 text=[14px] text-gray-primary font-semibold">
+            * {otpSendErrorMessage}
+          </p>
+        )}
+        {otpVerifyErrorMessage && (
           <p className=" w-[85vw] phone:w-[400px] mx-auto mt-1.5 text=[14px] text-gray-primary font-semibold">
             * {otpSendErrorMessage}
           </p>

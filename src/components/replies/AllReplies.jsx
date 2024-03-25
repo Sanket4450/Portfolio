@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { ReplyOptions } from './ReplyOptions'
 import { SingleReply } from './SingleReply'
 
-export const AllReplies = () => {
+export const AllReplies = ({ token }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   const [selectedMessages, setSelectedMessages] = useState([])
 

@@ -6,13 +6,13 @@ import { userDetails } from '../../data/user'
 import { messageIcons } from '../../data/messages'
 import { getAdminRootData } from '../../api/admin'
 
-export const AdminHome = () => {
+export const AdminHome = ({ token }) => {
   const theme = useSelector((state) => state.theme.value)
   const [homeData, setHomeData] = useState({})
 
-  // useEffect(() => {
-  //   getAdminRootData().then((data) => setHomeData(data))
-  // }, [])
+  useEffect(() => {
+    getAdminRootData(token).then((data) => {console.log(data), setHomeData(data)})
+  }, [])
 
   return (
     <section>
