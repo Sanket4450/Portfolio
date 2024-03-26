@@ -6,8 +6,6 @@ import { FormTextField } from './FormTextField'
 import { messageSchema } from '../../schemas'
 import { sendMessage } from '../../api/user'
 
-const baseURL = import.meta.env.VITE_BASE_URL
-
 const initialValues = {
   firstName: '',
   lastName: '',
