@@ -11,7 +11,7 @@ export const AdminHome = ({ token }) => {
   const [homeData, setHomeData] = useState({})
 
   useEffect(() => {
-    getAdminRootData(token).then((data) => {console.log(data), setHomeData(data)})
+    getAdminRootData(token).then((data) => setHomeData(data))
   }, [])
 
   return (

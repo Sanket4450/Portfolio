@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { CircularProgress } from '@mui/material'
 import { FormTextField } from './FormTextField'
 import { messageSchema } from '../../schemas'
+import { sendMessage } from '../../api/user'
 
 const baseURL = import.meta.env.VITE_BASE_URL
 
@@ -36,22 +37,14 @@ export const GetInTouch = () => {
     onSubmit: (values, action) => {
       setErrorMessage('')
       setLoading(true)
-      fetch(`${baseURL}/messages`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ ...values, mobile: Number(values.mobile) }),
-      })
-        .then((raw) => raw.json())
-        .then((data) => {
+
+      const payload = { ...values, mobile: Number(values.mobile) }
+
+      sendMessage(payload)
+        .then(() => {
           setLoading(false)
-          if (data.code !== 200) {
-            setErrorMessage(data.message)
-          } else {
-            action.resetForm()
-            navigate('/submit')
-          }
+          action.resetForm()
+          navigate('/submit')
         })
         .catch((error) => {
           setErrorMessage(error.message)
