@@ -30,7 +30,16 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/submit" element={<Submit />} />
         <Route path="/admin">
-          <Route index element={token && <Dashboard token={token} />} />
+          <Route
+            index
+            element={
+              token ? (
+                <Dashboard token={token} />
+              ) : (
+                <VerifySecret isSecretVerified={isSecretVerified} setIsSecretVerified={setIsSecretVerified} />
+              )
+            }
+          />
           <Route
             path="verify-secret"
             element={<VerifySecret isSecretVerified={isSecretVerified} setIsSecretVerified={setIsSecretVerified} />}
@@ -46,10 +55,37 @@ const App = () => {
             }
           />
           <Route path="messages">
-            <Route index element={token && <Messages token={token} />} />
-            <Route path=":messageId" element={token && <Message token={token} />} />
+            <Route
+              index
+              element={
+                token ? (
+                  <Messages token={token} />
+                ) : (
+                  <VerifySecret isSecretVerified={isSecretVerified} setIsSecretVerified={setIsSecretVerified} />
+                )
+              }
+            />
+            <Route
+              path=":messageId"
+              element={
+                token ? (
+                  <Message token={token} />
+                ) : (
+                  <VerifySecret isSecretVerified={isSecretVerified} setIsSecretVerified={setIsSecretVerified} />
+                )
+              }
+            />
           </Route>
-          <Route path="replies" element={token && <Replies token={token} />} />
+          <Route
+            path="replies"
+            element={
+              token ? (
+                <Replies token={token} />
+              ) : (
+                <VerifySecret isSecretVerified={isSecretVerified} setIsSecretVerified={setIsSecretVerified} />
+              )
+            }
+          />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -47,6 +47,7 @@ export const GetInTouch = () => {
           navigate('/submit')
         })
         .catch((error) => {
+          setLoading(false)
           setErrorMessage(error.message)
         })
     },
@@ -133,7 +134,7 @@ export const GetInTouch = () => {
         </div>
         <button
           type="submit"
-          className={` bg-text-theme-primary text-bg-primary font-bold text-lg tracking-wider px-8 py-4 rounded-full ${
+          className={` bg-text-theme-primary text-bg-primary hover:bg-text-theme-hover-primary font-bold text-lg tracking-wider px-8 py-4 rounded-full transition duration-200 ${
             loading ? 'opacity-40' : 'opacity-100'
           }`}
         >
