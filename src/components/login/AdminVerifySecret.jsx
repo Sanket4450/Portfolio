@@ -92,8 +92,7 @@ export const AdminVerifySecret = ({ isSecretVerified, setIsSecretVerified }) => 
                 color: 'var(--text-theme-primary)',
               },
               '& .MuiFormHelperText-root': {
-                color: 'var(--gray-strong)',
-                fontWeight: 'bold',
+                color: 'var(--text-theme-primary)',
                 fontSize: '14px',
                 marginLeft: 0,
               },

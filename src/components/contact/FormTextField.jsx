@@ -8,7 +8,6 @@ export const FormTextField = ({ width, label, name, value, onChange, onBlur, hel
       }}
       noValidate
       autoComplete="off"
-      overflow="hidden"
     >
       <TextField
         multiline={multiline}
@@ -37,7 +36,7 @@ export const FormTextField = ({ width, label, name, value, onChange, onBlur, hel
             color: 'var(--text-theme-primary)',
           },
           '& .MuiFormHelperText-root': {
-            color: 'var(--gray-strong)',
+            color: 'var(--text-theme-primary)',
             fontSize: '14px',
             marginLeft: 0,
           },

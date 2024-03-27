@@ -55,15 +55,19 @@ export const AdminVerifyOtp = ({ isSecretVerified, isOtpVerified, setIsOtpVerifi
   }
 
   const handleOtpVerify = () => {
-    verifyAdminOtp(parseInt(otp))
-      .then((data) => {
-        removeItem('isOtpSent')
-        setItem('isOtpVerified', true)
-        setIsOtpVerified(true)
-        setItem('token', data.accessToken)
-        navigate('/admin')
-      })
-      .catch((error) => setOtpVerifyErrorMessage(error.message))
+    if (otp.length !== 6) {
+      setOtpVerifyErrorMessage('Enter a valid OTP')
+    } else {
+      verifyAdminOtp(parseInt(otp))
+        .then((data) => {
+          removeItem('isOtpSent')
+          setItem('isOtpVerified', true)
+          setIsOtpVerified(true)
+          setItem('token', data.accessToken)
+          navigate('/admin')
+        })
+        .catch((error) => setOtpVerifyErrorMessage(error.message))
+    }
   }
 
   return (
@@ -73,7 +77,7 @@ export const AdminVerifyOtp = ({ isSecretVerified, isOtpVerified, setIsOtpVerifi
         className=" w-28 mx-auto mt-12 mb-8"
       />
       <h1 className=" text-primary font-semibold text-4xl text-center">Verification</h1>
-      <div className=" my-8">
+      <div className={` my-10 ${otpSendErrorMessage || otpVerifyErrorMessage ? 'space-y-2.5' : 'space-y-0'}`}>
         <OtpInput
           value={otp}
           onChange={handleOtpChange}
@@ -97,13 +101,13 @@ export const AdminVerifyOtp = ({ isSecretVerified, isOtpVerified, setIsOtpVerifi
           }}
         />
         {otpSendErrorMessage && (
-          <p className=" w-[85vw] phone:w-[400px] mx-auto mt-1.5 text=[14px] text-gray-primary font-semibold">
+          <p className=" w-[85vw] phone:w-[400px] mx-auto mt-1.5 text=[14px] text-theme-primary">
             * {otpSendErrorMessage}
           </p>
         )}
         {otpVerifyErrorMessage && (
-          <p className=" w-[85vw] phone:w-[400px] mx-auto mt-1.5 text=[14px] text-gray-primary font-semibold">
-            * {otpSendErrorMessage}
+          <p className=" w-[85vw] phone:w-[400px] mx-auto mt-1.5 text=[14px] text-theme-primary">
+            * {otpVerifyErrorMessage}
           </p>
         )}
       </div>
