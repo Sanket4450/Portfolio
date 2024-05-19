@@ -11,7 +11,7 @@ export const UserServices = () => {
     <section className=" max-sm:pb-10 space-y-16">
       <div className=" flex justify-between">
         <h2 className=" text-primary sm:max-w-[40%] font-bold max-phone:text-xl max-md:text-2xl md:text-3xl">
-          {userDetails.experience}+ Years Experience Working
+          {userDetails.experience}+ Years of Working Experience
         </h2>
         <div className=" max-sm:hidden sm:max-w-[40%] flex flex-col space-y-1.5">
           <TitleLink title="Services" />

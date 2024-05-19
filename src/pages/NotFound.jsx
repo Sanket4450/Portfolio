@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 export const NotFound = () => {
   useEffect(() => {
     document.title = 'Page Not Found - Portfolio'
+    window.scrollTo(0, 0)
   }, [])
 
   return (

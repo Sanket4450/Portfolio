@@ -11,7 +11,7 @@ const email = 'talaviyasanket01@gmail.com'
 const location = 'Surat, Gujarat, India'
 const github = 'https://github.com/Sanket4450'
 const cv = 'https://docs.google.com/document/d/1lmnm06zDEWFFBMpB8J51iGPwmHA3P7yucT3mSN4UExU/edit?usp=drive_link'
-const experience = 1.5
+const experience = 2
 
 const about =
   'I am a MERN stack developer with a deep passion for crafting web applications. With expertise in React, Node.js, Express, MongoDB, JavaScript, TypeScript, HTML, CSS, and SQL, I thrive in dynamic environments where learning, innovation and problem-solving take place.'

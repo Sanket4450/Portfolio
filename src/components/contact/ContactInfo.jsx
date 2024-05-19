@@ -12,7 +12,7 @@ export const ContactInfo = () => {
     <section className=" md:flex md:justify-between flex-wrap max-md:space-y-10 py-10">
       <ContactCard
         IconComp={PhoneComp}
-        contactValue="+91 XXXXX XXXXX"
+        contactValue={`+91 ${userDetails.mobile}`}
         hrefValue={`tel:${userDetails.mobile}`}
         description="Contact Phone"
       />

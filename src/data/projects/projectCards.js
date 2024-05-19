@@ -105,7 +105,7 @@ export const projectCards = [
     id: 'sonicbox',
     path: '/projects/sonicbox',
     title: 'SonicBox',
-    titleDescription: 'Music streaming App Backend',
+    titleDescription: 'Music streaming Backend',
     image: sonicboxPreview,
     align: 'left',
     projectURL: '#',

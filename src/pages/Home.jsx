@@ -1,12 +1,13 @@
 import { useEffect } from 'react'
-import { UserDetails } from '../../components/home'
-import { UserServices } from '../../components/home'
-import { RecentWork } from '../../components/home'
-import { ContactMe } from '../../components/home'
+import { UserDetails } from '../components/home'
+import { UserServices } from '../components/home'
+import { RecentWork } from '../components/home'
+import { ContactMe } from '../components/home'
 
 export const Home = () => {
   useEffect(() => {
     document.title = 'Portfolio - Welcome to my portfolio!'
+    window.scrollTo(0, 0)
   }, [])
 
   return (

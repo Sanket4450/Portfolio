@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useFormik } from 'formik'
-import { useNavigate } from 'react-router-dom'
 import { CircularProgress } from '@mui/material'
 import { FormTextField } from './FormTextField'
-import { messageSchema } from '../../schemas'
-import { sendMessage } from '../../api/user'
+import * as Yup from 'yup'
 
 const initialValues = {
   firstName: '',
@@ -15,11 +13,27 @@ const initialValues = {
   description: '',
 }
 
+const validationSchema = Yup.object({
+  firstName: Yup.string()
+    .min(2, 'First Name must be at least 2 characters')
+    .max(20, 'First Name must be at most 20 characters')
+    .required('First Name is required'),
+  lastName: Yup.string()
+    .min(2, 'Last Name must be at least 2 characters')
+    .max(20, 'Last Name must be at most 20 characters')
+    .required('Last Name is required'),
+  email: Yup.string().email('Invalid Email Address').required('Email is required'),
+  mobile: Yup.string()
+    .min(10, 'Mobile Number must be of 10 digits')
+    .max(10, 'Mobile Number must be of 10 digits')
+    .matches(/^\d{10}$/, 'Invalid Mobile Number'),
+  subject: Yup.string().max(100, 'Subject must be at most 20 characters').required('Subject is required'),
+  description: Yup.string().max(500, 'Description must be at most 20 characters').required('Description is required'),
+})
+
 export const GetInTouch = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
   const [loading, setLoading] = useState(false)
-  const [errorMessage, setErrorMessage] = useState('')
-  const navigate = useNavigate()
 
   useEffect(() => {
     window.addEventListener('resize', () => setScreenWidth(window.innerWidth))
@@ -31,22 +45,31 @@ export const GetInTouch = () => {
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues,
-    validationSchema: messageSchema,
-    onSubmit: (values, action) => {
-      setErrorMessage('')
+    validationSchema,
+    onSubmit: (values, { setSubmitting, resetForm }) => {
       setLoading(true)
 
-      const payload = { ...values, mobile: Number(values.mobile) }
-
-      sendMessage(payload)
-        .then(() => {
-          setLoading(false)
-          action.resetForm()
-          navigate('/submit')
+      fetch('https://formsubmit.co/ajax/talaviyasanket01@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(values),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            alert('Message sent successfully')
+            resetForm()
+          } else {
+            alert('Message failed to send')
+          }
+          setSubmitting(false)
         })
         .catch((error) => {
-          setLoading(false)
-          setErrorMessage(error.message)
+          alert('An error occurred: ' + error.message)
+          setSubmitting(false)
         })
     },
   })
@@ -61,7 +84,7 @@ export const GetInTouch = () => {
       <form onSubmit={handleSubmit} className=" flex flex-col items-center space-y-7 py-10">
         <div
           className={` w-full md:flex md:justify-center max-md:space-y-7 md:space-x-5 ${
-            loading ? 'opacity-40' : 'opacity-100'
+            loading ? 'opacity-25' : 'opacity-100'
           }`}
         >
           <FormTextField
@@ -85,7 +108,7 @@ export const GetInTouch = () => {
         </div>
         <div
           className={` w-full md:flex justify-center max-md:space-y-7 md:space-x-5 ${
-            loading ? 'opacity-40' : 'opacity-100'
+            loading ? 'opacity-25' : 'opacity-100'
           }`}
         >
           <FormTextField
@@ -107,7 +130,7 @@ export const GetInTouch = () => {
             helperText={errors.email && touched.email ? `* ${errors.email}` : null}
           />
         </div>
-        <div className={` w-full md:flex justify-center max-md:space-y-7 ${loading ? 'opacity-40' : 'opacity-100'}`}>
+        <div className={` w-full md:flex justify-center max-md:space-y-7 ${loading ? 'opacity-25' : 'opacity-100'}`}>
           <FormTextField
             width={screenWidth < 768 ? '100%' : screenWidth < 1024 ? '680px' : '820px'}
             label="Subject"
@@ -118,7 +141,7 @@ export const GetInTouch = () => {
             helperText={errors.subject && touched.subject ? `* ${errors.subject}` : null}
           />
         </div>
-        <div className={` w-full md:flex justify-center max-md:space-y-7 ${loading ? 'opacity-40' : 'opacity-100'}`}>
+        <div className={` w-full md:flex justify-center max-md:space-y-7 ${loading ? 'opacity-25' : 'opacity-100'}`}>
           <FormTextField
             width={screenWidth < 768 ? '100%' : screenWidth < 1024 ? '680px' : '820px'}
             label="Write a Message"
@@ -133,12 +156,11 @@ export const GetInTouch = () => {
         <button
           type="submit"
           className={` bg-text-theme-primary text-bg-primary hover:bg-text-theme-hover-primary font-bold text-lg tracking-wider px-8 py-4 rounded-full transition duration-200 ${
-            loading ? 'opacity-40' : 'opacity-100'
+            loading ? 'opacity-25' : 'opacity-100'
           }`}
         >
           Send Message
         </button>
-        {errorMessage && <p className=" text-gray-strong font-semibold text-2xl text-center">{`* ${errorMessage}`}</p>}
         {loading && (
           <CircularProgress
             size={50}

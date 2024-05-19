@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
-import { ContactInfo, GetInTouch } from '../../components/contact'
+import { ContactInfo, GetInTouch } from '../components/contact'
 
 export const Contact = () => {
   useEffect(() => {
     document.title = 'Portfolio | Contact Me'
+    window.scrollTo(0, 0)
   }, [])
 
   return (

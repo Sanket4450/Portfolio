@@ -1,11 +1,12 @@
 import { useRef, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { AllProjects } from '../../components/project'
-import { projectCards } from '../../data/projects'
+import { AllProjects } from '../components/project'
+import { projectCards } from '../data/projects'
 
 export const Projects = () => {
   useEffect(() => {
     document.title = 'Portfolio | My Work'
+    window.scrollTo(0, 0)
   }, [])
 
   const { project } = useParams()

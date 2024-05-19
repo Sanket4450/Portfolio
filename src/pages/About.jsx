@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
-import { AboutContent } from '../../components/about'
+import { AboutContent } from '../components/about'
 
 export const About = () => {
   useEffect(() => {
     document.title = 'Portfolio | About Me'
+    window.scrollTo(0, 0)
   }, [])
 
   return (

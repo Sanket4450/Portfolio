@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
-import { AllSkills } from '../../components/skill'
+import { AllSkills } from '../components/skill'
 
 export const Skills = () => {
   useEffect(() => {
     document.title = 'Portfolio | My Skills'
+    window.scrollTo(0, 0)
   }, [])
 
   return (

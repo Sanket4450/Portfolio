@@ -27,7 +27,7 @@ export const mediaList = {
     {
       id: 2,
       title: 'LinkedIn',
-      link: 'https://www.linkedin.com/in/sankettalaviya/',
+      link: 'https://www.linkedin.com/in/sankettalaviya',
     },
   ],
 }
