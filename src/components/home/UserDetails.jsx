@@ -19,7 +19,7 @@ export const UserDetails = () => {
           Github
         </a>
         <a
-          href="https://drive.google.com/file/d/1w3THQnRq3xIBr5DJ1iKTGFX2jSlB84hN/view?usp=drive_link"
+          href={userDetails.cv}
           target='_blank'
           className=" text-gray-strong flex space-x-1"
           download="cv"
