@@ -6,6 +6,7 @@ import Tailwind from '../../assets/pngs/tailwind-css-icon.png'
 import React from '../../assets/pngs/react-js-icon.png'
 import Redux from '../../assets/pngs/redux-icon.png'
 import TypeScript from '../../assets/pngs/typescript-programming-language-icon.png'
+import Apollo from '../../assets/pngs/apollo-graphql-icon.png'
 
 export const frontendSkills = [
   {
@@ -55,5 +56,11 @@ export const frontendSkills = [
     title: 'TypeScript',
     logo: TypeScript,
     link: 'https://www.typescriptlang.org/',
+  },
+  {
+    id: 9,
+    title: 'Apollo GraphQL',
+    logo: Apollo,
+    link: 'https://www.apollographql.com/',
   },
 ]

@@ -1,6 +1,6 @@
 import NodeJS from '../../assets/pngs/node-js-icon.png'
 import ExpressJS from '../../assets/pngs/express-js-icon.png'
-import RESTAPI from '../../assets/pngs/web-api-icon.png'
+import RESTAPI from '../../assets/pngs/rest-api-icon.png'
 import GraphQL from '../../assets/pngs/graphql-icon.png'
 import MongoDB from '../../assets/pngs/mongodb-icon.png'
 import SQL from '../../assets/pngs/database-icon.png'

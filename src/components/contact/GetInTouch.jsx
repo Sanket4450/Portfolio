@@ -66,10 +66,12 @@ export const GetInTouch = () => {
             alert('Message failed to send')
           }
           setSubmitting(false)
+          setLoading(false)
         })
         .catch((error) => {
           alert('An error occurred: ' + error.message)
           setSubmitting(false)
+          setLoading(false)
         })
     },
   })

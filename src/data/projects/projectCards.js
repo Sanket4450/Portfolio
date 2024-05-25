@@ -1,3 +1,4 @@
+import newslinePreview from '../../assets/images/newsline-preview.png'
 import eviraPreview from '../../assets/images/evira-preview.jpg'
 import applePreview from '../../assets/images/apple-home.jpg'
 import sonicboxPreview from '../../assets/images/sonicbox-preview.jpg'
@@ -9,22 +10,68 @@ import Tailwind from '../../assets/pngs/tailwind-css-icon.png'
 import TypeScript from '../../assets/pngs/typescript-programming-language-icon.png'
 import NodeJS from '../../assets/pngs/node-js-icon.png'
 import ExpressJS from '../../assets/pngs/express-js-icon.png'
-import RESTAPI from '../../assets/pngs/web-api-icon.png'
+import RESTAPI from '../../assets/pngs/rest-api-icon.png'
 import GraphQL from '../../assets/pngs/graphql-icon.png'
 import MongoDB from '../../assets/pngs/mongodb-icon.png'
 import Git from '../../assets/pngs/git-icon.png'
-import GitHub from '../../assets/pngs/github-icon.png'
 import Postman from '../../assets/pngs/postman-icon.png'
+import AWS from '../../assets/pngs/aws-icon.png'
 
 export const projectCards = [
+  {
+    id: 'newsline',
+    path: '/projects/newsline',
+    title: 'Newsline',
+    titleDescription: 'Full Stack News App',
+    image: newslinePreview,
+    align: 'left',
+    projectURL: 'https://admin-newsline.netlify.app',
+    githubURL: 'https://github.com/Sanket4450/Newsline.git',
+    descriptionPoints: [
+      {
+        id: 1,
+        title: 'Personalized News Feed',
+        description:
+          'Customize your news feed to cater to your unique interests and preferences. Tailor your feed by selecting specific topics, keywords, or sources that matter most to you, ensuring that you receive relevant and timely content.',
+      },
+      {
+        id: 2,
+        title: 'Engage with Community',
+        description:
+          'Engage with fellow users by participating in lively discussions and debates on news articles and current events. Share your perspectives, insights, and opinions, and interact with others through comments, replies, and likes.',
+      },
+      {
+        id: 3,
+        title: 'Post Articles & Stories',
+        description:
+          'Easily post articles & stories to popular social media platforms such as Facebook, Twitter, and LinkedIn, allowing you to spark conversations and drive engagement among your friends and followers.',
+      },
+      {
+        id: 4,
+        title: 'Save Articles',
+        description:
+          'Organize your saved articles into personalized collections or categories, making it easy to revisit and access your favorite stories whenever you want.',
+      },
+    ],
+    technologies: [
+      { id: 1, logo: JavaScript, link: '#' },
+      { id: 2, logo: NodeJS, link: 'https://nodejs.org/' },
+      { id: 3, logo: ExpressJS, link: 'https://expressjs.com/' },
+      { id: 4, logo: MongoDB, link: 'https://www.mongodb.com/' },
+      { id: 5, logo: RESTAPI, link: '#' },
+      { id: 6, logo: Git, link: 'https://git-scm.com/' },
+      { id: 7, logo: Postman, link: 'https://www.postman.com/' },
+      { id: 8, logo: AWS, link: 'https://aws.amazon.com/' },
+    ],
+  },
   {
     id: 'evira',
     path: '/projects/evira',
     title: 'Evira',
-    titleDescription: 'E-commerce App Backend',
+    titleDescription: 'E-commerce Backend',
     image: eviraPreview,
-    align: 'left',
-    projectURL: 'https://evira.onrender.com/api/docs',
+    align: 'right',
+    projectURL: 'https://evira.work.gd/api/docs/',
     githubURL: 'https://github.com/Sanket4450/Evira',
     descriptionPoints: [
       {
@@ -59,8 +106,47 @@ export const projectCards = [
       { id: 4, logo: MongoDB, link: 'https://www.mongodb.com/' },
       { id: 5, logo: RESTAPI, link: '#' },
       { id: 6, logo: Git, link: 'https://git-scm.com/' },
-      { id: 7, logo: GitHub, link: 'https://github.com/' },
-      { id: 8, logo: Postman, link: 'https://www.postman.com/' },
+      { id: 7, logo: Postman, link: 'https://www.postman.com/' },
+      { id: 8, logo: AWS, link: 'https://aws.amazon.com/' },
+    ],
+  },
+  {
+    id: 'sonicbox',
+    path: '/projects/sonicbox',
+    title: 'SonicBox',
+    titleDescription: 'Music App Backend',
+    image: sonicboxPreview,
+    align: 'left',
+    projectURL: '#',
+    githubURL: 'https://github.com/Sanket4450/SonicBox',
+    descriptionPoints: [
+      {
+        id: 1,
+        title: 'GraphQL Backend Implementation',
+        description:
+          'SonicBox boasts a sophisticated backend architecture developed using GraphQL that allows for efficient data retrieval and manipulation, enabling clients to request precisely the data they need,',
+      },
+      {
+        id: 2,
+        title: 'TypeScript for Strong Typing',
+        description:
+          "TypeScript serves as the primary programming language for SonicBox's backend development, offering strong typing to improve code quality and developer productivity by enforcing strict type checking at compile-time",
+      },
+      {
+        id: 3,
+        title: 'Secure Token-Based Authentication',
+        description:
+          'SonicBox implements token-based authentication to ensure secure access control. By generating and validating tokens, SonicBox verifies the identity of users and grants them access to protected resources and functionalities.',
+      },
+    ],
+    technologies: [
+      { id: 1, logo: TypeScript, link: 'https://www.typescriptlang.org/' },
+      { id: 2, logo: NodeJS, link: 'https://nodejs.org/' },
+      { id: 3, logo: ExpressJS, link: 'https://expressjs.com/' },
+      { id: 4, logo: MongoDB, link: 'https://www.mongodb.com/' },
+      { id: 5, logo: GraphQL, link: 'https://graphql.org/' },
+      { id: 6, logo: Git, link: 'https://git-scm.com/' },
+      { id: 7, logo: Postman, link: 'https://www.postman.com/' },
     ],
   },
   {
@@ -98,47 +184,6 @@ export const projectCards = [
       { id: 3, logo: Tailwind, link: 'https://tailwindcss.com/' },
       { id: 4, logo: JavaScript, link: '#' },
       { id: 5, logo: Git, link: 'https://git-scm.com/' },
-      { id: 6, logo: GitHub, link: 'https://github.com/' },
-    ],
-  },
-  {
-    id: 'sonicbox',
-    path: '/projects/sonicbox',
-    title: 'SonicBox',
-    titleDescription: 'Music streaming Backend',
-    image: sonicboxPreview,
-    align: 'left',
-    projectURL: '#',
-    githubURL: 'https://github.com/Sanket4450/SonicBox',
-    descriptionPoints: [
-      {
-        id: 1,
-        title: 'GraphQL Backend Implementation',
-        description:
-          'SonicBox boasts a sophisticated backend architecture developed using GraphQL that allows for efficient data retrieval and manipulation, enabling clients to request precisely the data they need,',
-      },
-      {
-        id: 2,
-        title: 'TypeScript for Strong Typing',
-        description:
-          "TypeScript serves as the primary programming language for SonicBox's backend development, offering strong typing to improve code quality and developer productivity by enforcing strict type checking at compile-time",
-      },
-      {
-        id: 3,
-        title: 'Secure Token-Based Authentication',
-        description:
-          'SonicBox implements token-based authentication to ensure secure access control. By generating and validating tokens, SonicBox verifies the identity of users and grants them access to protected resources and functionalities.',
-      },
-    ],
-    technologies: [
-      { id: 1, logo: TypeScript, link: 'https://www.typescriptlang.org/' },
-      { id: 2, logo: NodeJS, link: 'https://nodejs.org/' },
-      { id: 3, logo: ExpressJS, link: 'https://expressjs.com/' },
-      { id: 4, logo: MongoDB, link: 'https://www.mongodb.com/' },
-      { id: 5, logo: GraphQL, link: 'https://graphql.org/' },
-      { id: 6, logo: Git, link: 'https://git-scm.com/' },
-      { id: 7, logo: GitHub, link: 'https://github.com/' },
-      { id: 8, logo: Postman, link: 'https://www.postman.com/' },
     ],
   },
 ]

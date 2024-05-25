@@ -7,7 +7,8 @@ export const SkillCard = ({ image, title, link }) => {
       <div className=" h-[25%] bg-text-theme-primary flex justify-center items-center rounded-b-sm">
         <a
           href={link}
-          className=" text-bg-primary font-bold text-center text-2xl tracking-wide transition duration-300"
+          className=" text-bg-primary font-bold text-center text-xl tracking-wide transition duration-300"
+          target="_blank"
         >
           {title}
         </a>

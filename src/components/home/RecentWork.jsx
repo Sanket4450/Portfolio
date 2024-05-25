@@ -21,7 +21,7 @@ export const RecentWork = () => {
         </div>
       </div>
       <div className=" flex flex-col lg:flex-row justify-between items-center max-lg:space-y-5 sm:max-lg:grid sm:max-lg:grid-cols-1">
-        {projectCards.map((projectCard) => (
+        {projectCards.slice(0, 3).map((projectCard) => (
           <WorkCard
             key={projectCard.id}
             path={projectCard.path}

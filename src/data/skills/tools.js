@@ -2,6 +2,7 @@ import Git from '../../assets/pngs/git-icon.png'
 import GitHub from '../../assets/pngs/github-icon.png'
 import VSCode from '../../assets/pngs/visual-studio-code-icon.png'
 import Postman from '../../assets/pngs/postman-icon.png'
+import AWS from '../../assets/pngs/aws-icon.png'
 
 export const tools = [
   {
@@ -27,5 +28,11 @@ export const tools = [
     title: 'Postman',
     logo: Postman,
     link: 'https://www.postman.com/',
+  },
+  {
+    id: 5,
+    title: 'AWS Services',
+    logo: AWS,
+    link: 'https://aws.amazon.com/',
   },
 ]

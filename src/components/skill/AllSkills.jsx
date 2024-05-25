@@ -7,7 +7,7 @@ export const AllSkills = () => {
       <SkillSection title="Programming Languages" skills={languages} />
       <SkillSection title="Front-end" skills={frontendSkills} />
       <SkillSection title="Back-end" skills={backendSkills} />
-      <SkillSection title="Other Tools" skills={tools} />
+      <SkillSection title="Tools" skills={tools} />
     </section>
   )
 }
